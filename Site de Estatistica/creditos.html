@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créditos</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .creditos-main {
+            max-width: 1200px;
+            margin: 3rem auto 2rem auto;
+            padding: 2.5rem 2rem;
+            background: rgba(22,36,58,0.97);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 rgba(30, 144, 255, 0.10);
+            color: #f7faff;
+            animation: fadeInUp 1.2s;
+        }
+        .creditos-title {
+            font-size: 2.3rem;
+            color: #2ecc71;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+        .creditos-desc {
+            text-align: center;
+            color: #b3c6e0;
+            margin-bottom: 2.5rem;
+            font-size: 1.15rem;
+        }
+        .creditos-columns {
+            display: flex;
+            gap: 2.5rem;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .creditos-col {
+            flex: 1 1 280px;
+            min-width: 260px;
+            background: #16243a;
+            border-radius: 14px;
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.08);
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .creditos-col h2 {
+            font-size: 1.2rem;
+            color: #2ecc71;
+            margin-bottom: 1.1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .creditos-list, .creditos-list-2 {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        .creditos-list li {
+            margin-bottom: 1.1rem;
+        }
+        .creditos-list .nome {
+            font-weight: 700;
+            color: #fff;
+            font-size: 1.08rem;
+        }
+        .creditos-list .funcao {
+            color: #b3c6e0;
+            font-size: 0.98rem;
+        }
+        .creditos-list-2 li {
+            margin-bottom: 1.1rem;
+        }
+        .creditos-list-2 .titulo {
+            font-weight: 700;
+            color: #fff;
+            font-size: 1.08rem;
+        }
+        .creditos-list-2 .desc {
+            color: #b3c6e0;
+            font-size: 0.98rem;
+        }
+        .creditos-tec-group {
+            margin-bottom: 1.2rem;
+        }
+        .creditos-tec-title {
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .creditos-tec-list {
+            margin: 0 0 1rem 0;
+            padding: 0;
+            list-style: none;
+        }
+        .creditos-tec-list li {
+            color: #1e90ff;
+            font-weight: 700;
+            font-size: 1.01rem;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .creditos-tec-list .fa-solid,
+        .creditos-tec-list .fa-brands {
+            color: #2ecc71;
+            font-size: 1.1rem;
+        }
+        body.light-mode {
+            background: #f7faff;
+            color: #1a2233;
+        }
+        body.light-mode .creditos-main {
+            background: #fff;
+            color: #1a2233;
+            box-shadow: 0 4px 24px 0 rgba(30, 144, 255, 0.08);
+        }
+        body.light-mode .creditos-title {
+            color: #1e90ff;
+        }
+        body.light-mode .creditos-desc {
+            color: #3a4a6a;
+        }
+        body.light-mode .logo span {
+            color: #1a2233 !important;
+        }
+        body.light-mode .creditos-col {
+            background: #f0f4fa;
+            color: #1a2233;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.05);
+        }
+        body.light-mode .creditos-col h2 {
+            color: #1e90ff;
+        }
+        body.light-mode .creditos-list .nome,
+        body.light-mode .creditos-list-2 .titulo,
+        body.light-mode .creditos-tec-title {
+            color: #1a2233;
+        }
+        body.light-mode .creditos-list .funcao,
+        body.light-mode .creditos-list-2 .desc {
+            color: #3a4a6a;
+        }
+        body.light-mode .creditos-tec-list li {
+            color: #1e90ff;
+        }
+        body.light-mode .creditos-tec-list .fa-solid,
+        body.light-mode .creditos-tec-list .fa-brands {
+            color: #1e90ff;
+        }
+        body.light-mode .header,
+        body.light-mode nav.nav {
+            background: #fff !important;
+            color: #1a2233 !important;
+        }
+        body.light-mode .nav a,
+        body.light-mode .dropdown-btn {
+            color: #1a2233 !important;
+        }
+        body.light-mode .dropdown-content {
+            background: #f0f4fa !important;
+        }
+        
+        @media (max-width: 900px) {
+            .creditos-columns {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .creditos-col {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+        @media (max-width: 600px) {
+            .creditos-main {
+                padding: 1.2rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='index.html'">
+            <img src="image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aulas/aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aulas/aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aulas/aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aulas/aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aulas/aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aulas/aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aulas/aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aulas/aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aulas/aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aulas/aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aulas/aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aulas/aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aulas/aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+        
+    </header>
+
+    <main>
+        <div class="creditos-main">
+            <h1 class="creditos-title">Créditos</h1>
+            <div class="creditos-desc">
+                Esta página apresenta as pessoas e recursos envolvidos no desenvolvimento do projeto educacional de Estatística.
+            </div>
+            <div class="creditos-columns">
+                <!-- Coluna 1: Alunos -->
+                <div class="creditos-col">
+                    <h2><span role="img" aria-label="Alunos">🧑‍💻</span> Alunos Participantes</h2>
+                    <ul class="creditos-list">
+                        <li>
+                            <span class="nome">CESAR OTÁVIO DA SILVA BOIANI</span><br>
+                            <span class="funcao">Desenvolvimento</span>
+                        </li>
+                        <li>
+                            <span class="nome">FELIPE MELGES RUARO</span><br>
+                            <span class="funcao">Desenvolvimento</span>
+                        </li>
+                        <li>
+                            <span class="nome">GIOVANA GIRALDELI</span><br>
+                            <span class="funcao">Desenvolvimento</span>
+                        </li>
+                        <li>
+                            <span class="nome">GIOVANI NOGUEIRA PIRES</span><br>
+                            <span class="funcao">Desenvolvimento</span>
+                        </li>
+                        <li>
+                            <span class="nome">MARCUS VINICIUS DA SILVA CAPETRUCHI</span><br>
+                            <span class="funcao">Desenvolvimento</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Coluna 2: Professores e Instituição -->
+                <div class="creditos-col">
+                    <h2><span role="img" aria-label="Professores e Instituição">🏫</span> Professores e Instituição</h2>
+                    <ul class="creditos-list-2">
+                        <li>
+                            <span class="titulo">Professora Orientadora</span><br>
+                            <span class="desc">Prof. Rosane Maria Lima Araújo<br>Orientadora da Disciplina</span>
+                        </li>
+                        <li>
+                            <span class="titulo">Instituição</span><br>
+                            <span class="desc">Centro Universitário Sagrado Coração<br>
+                            Trabalho apresentado como exigência da disciplina Estatística, do curso de Ciência da Computação do Centro Universitário Sagrado Coração.</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Coluna 3: Tecnologias e Recursos -->
+                <div class="creditos-col">
+                    <h2><span role="img" aria-label="Tecnologias">🛠️</span> Tecnologias e Recursos</h2>
+                    <div class="creditos-tec-group">
+                        <div class="creditos-tec-title">Front-end</div>
+                        <ul class="creditos-tec-list">
+                            <li><i class="fa-brands fa-react"></i> React + TypeScript</li>
+                            <li><i class="fa-solid fa-wind"></i> TailwindCSS</li>
+                            <li><i class="fa-regular fa-gem"></i> Lucide Icons</li>
+                            <li><i class="fa-solid fa-layer-group"></i> Shadcn UI Components</li>
+                        </ul>
+                    </div>
+                    <div class="creditos-tec-group">
+                        <div class="creditos-tec-title">Fontes de Dados</div>
+                        <ul class="creditos-tec-list">
+                            <li><i class="fa-solid fa-book"></i> Material didático da disciplina</li>
+                            <li><i class="fa-solid fa-database"></i> Repositório de Dados do IBGE</li>
+                            <li><i class="fa-solid fa-chart-bar"></i> Portal de Estatísticas Educacionais</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

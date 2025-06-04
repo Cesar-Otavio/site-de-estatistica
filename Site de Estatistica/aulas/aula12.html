@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .doc-section {
+            background: #16243a;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.08);
+            padding: 2rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 850px;
+            color: #f7faff;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+        .doc-section h1, .doc-section h2, .doc-section h3 {
+            color: #2ecc71;
+            font-weight: 800;
+            margin-top: 1.5rem;
+        }
+        .doc-section h1 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+        }
+        .doc-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+        .doc-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-section ul {
+            margin: 0.7rem 0 1.2rem 1.5rem;
+        }
+        .doc-section li {
+            margin-bottom: 0.5rem;
+        }
+        .doc-section .curiosidades {
+            background: #1e90ff22;
+            border-left: 5px solid #2ecc71;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+        .doc-section .figura, .doc-section .grafico, .doc-section .formula {
+            background: #22314a;
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            margin: 1.2rem 0;
+            color: #b3c6e0;
+            font-size: 0.98rem;
+            font-style: italic;
+        }
+        @media (max-width: 700px) {
+            .doc-section {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='../index.html'">
+            <img src="../image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="../creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aula8.html">AULA 8: Infográficos e Acrósticos</a>
+                    <a href="aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="../sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+        
+    </header>
+    <main>
+        <section class="doc-section">
+            <h1>AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</h1>
+            <h2>Distribuição t de Student</h2>
+            <p>
+                A distribuição t de Student é uma distribuição de probabilidade que é utilizada principalmente em estatísticas inferenciais, especialmente para estimar a média de uma população quando a amostra é pequena (geralmente, n &lt; 30) e a variância populacional é desconhecida. A forma da distribuição t se assemelha à distribuição normal, mas possui caudas mais longas, o que reflete a maior incerteza em amostras pequenas. À medida que o tamanho da amostra aumenta, a distribuição t se aproxima da distribuição normal.
+            </p>
+            <div class="figura">
+                Figura 22 - Exemplo de distribuições<br>
+                <img src="../image/image-aulas/Exemplo de distribuições-aula12.png" alt="">
+                Fonte: Blogger (Estatística SPSS), 2025
+            </div>
+            <h2>Distribuição do Qui-quadrado</h2>
+            <p>
+                A distribuição do qui-quadrado é uma distribuição de probabilidade que se utiliza principalmente em testes de hipóteses e na construção de intervalos de confiança para variâncias. É frequentemente usada em análises de variância (ANOVA) e na avaliação da adequação de modelos estatísticos. A forma da distribuição do qui-quadrado depende dos graus de liberdade; quanto mais graus de liberdade, mais a curva se aproxima da normal.
+            </p>
+            <div class="figura">
+                Figura 23 - Distribuição qui-quadrado<br>
+                <img src="../image/image-aulas/Distribuição qui-quadrado-aula12.png" alt="">
+                Fonte: Quizlet, 2025
+            </div>
+            <h3>Pequenas Amostras</h3>
+            <p>
+                Em estatística, pequenas amostras referem-se geralmente a conjuntos de dados com um número reduzido de observações (n &lt; 30). Quando se trabalha com pequenas amostras, as suposições sobre a população podem não ser tão confiáveis. Por isso, técnicas específicas, como o uso da distribuição t e métodos não paramétricos, são aplicadas para fazer inferências sobre a população.
+            </p>
+            <h3>Graus de Liberdade</h3>
+            <p>
+                Os graus de liberdade referem-se ao número independente de valores que podem variar ao calcular uma estatística. Em termos simples, eles representam a quantidade de informação disponível para estimar parâmetros em uma amostra. Por exemplo, ao calcular a variância em uma amostra, os graus de liberdade são geralmente dados por n - 1, onde n é o número total de observações na amostra. Isso ocorre porque estamos estimando a média da amostra ao calcular a variância.
+            </p>
+            <h3>EXERCÍCIOS:</h3>
+            <ol>
+                <li>
+                    Uma equipe de cientistas de dados está avaliando o tempo médio (em segundos) de resposta de um novo algoritmo de busca implementado em um sistema de banco de dados distribuído. Para isso, foram realizadas 12 execuções independentes do algoritmo sob as mesmas condições de carga e infraestrutura. A média amostral dos tempos de resposta obtida foi de 7,80 segundos, com um desvio padrão amostral de 1,50 segundos.<br>
+                    Considerando um nível de confiança de 95% e assumindo que os tempos de resposta seguem uma distribuição aproximadamente normal, utilize a distribuição t de Student para calcular o intervalo de confiança para o tempo médio de resposta do algoritmo.<br>
+                    <span class="formula">
+                        IC 95%; n = 12<br>
+                        x&#772; = 7,80; S = 1,50<br>
+                        g.l. = 12 - 1 = 11<br>
+                        IC = x&#772; ± t<sub>c</sub> × S/√n<br>
+                        7,80 ± 2,201 × 1,5/√12<br>
+                        7,80 ± 0,9530<br>
+                        Limite superior: 8,753<br>
+                        Limite inferior: 6,847
+                    </span>
+                    <div class="grafico">Gráfico 29 - ICM 95%</div>
+                    <img src="../image/image-aulas/ICM 95-aula12.png" alt="">
+                    <strong>Conclusão:</strong> Com 95% de confiança, o tempo médio de resposta do algoritmo está entre 6,85 e 8,75 segundos.
+                </li>
+                <li>
+                    Uma equipe de desenvolvedores está analisando o tempo médio de execução (em milissegundos) de uma nova função de ordenação implementada em um sistema embarcado de tempo real. Foram realizadas 15 execuções em condições controladas, resultando em:<br>
+                    Média amostral: 5,50 ms<br>
+                    Desvio padrão amostral: 0,60 ms<br>
+                    Considerando um nível de confiança de 99%, calcule o intervalo de confiança para o tempo médio de execução dessa função. Use a distribuição t de Student e assuma que o tempo de execução segue uma distribuição aproximadamente normal.<br>
+                    <span class="formula">
+                        IC 99%; n = 15<br>
+                        x&#772; = 5,50; S = 0,60<br>
+                        g.l. = 15 - 1 = 14<br>
+                        IC = x&#772; ± t<sub>c</sub> × S/√n<br>
+                        5,50 ± 2,977 × 0,60/√15<br>
+                        5,50 ± 0,4611<br>
+                        Limite superior: 5,9611<br>
+                        Limite inferior: 5,0389
+                    </span>
+                    <div class="grafico">Gráfico 30 - ICM 99%</div>
+                    <img src="../image/image-aulas/ICM 99-aula12.png" alt="">
+                    <strong>Conclusão:</strong> Com 99% de confiança, o tempo médio de execução da função está entre 5,04 ms e 5,96 ms.
+                </li>
+                <li>
+                    Dado um conjunto de dados categóricos com n = 18 observações e graus de liberdade (g.l.) = 17, deseja-se avaliar a independência entre duas variáveis por meio do teste de Qui-Quadrado (χ²).<br>
+                    Considerando um nível de confiança (IC) de 90%, determine os valores críticos da distribuição Qui-Quadrado para as seguintes condições:<br>
+                    χ² inferior (χ²ᵢ): Valor onde 5% da área está à esquerda (α/2 = 0,05) → χ²(17, 0,95) = 8,672<br>
+                    χ² superior (χ²ₛ): Valor onde 5% da área está à direita (1 - α/2 = 0,05) → χ²(17, 0,05) = 27,587
+                    <div class="grafico">Gráfico 31 - Qui-Quadrado 90%</div>
+                    <img src="../image/image-aulas/Qui-Quadrado 90-aula12.png" alt="">
+                </li>
+            </ol>
+            <div class="curiosidades">
+                <h3>CURIOSIDADES:</h3>
+                <div class="figura">
+                    Figura 24 - Tabela Distribuição Qui-Quadrado<br>
+                    <img src="../image/image-aulas/Tabela Distribuição Qui-Quadrado-aula12.png" alt="">
+                    Fonte: IME/UNICAMP, 2025
+                </div>
+                <div class="figura">
+                    Figura 25 – Tabela Distribuição T Student<br>
+                    <img src="../image/image-aulas/Tabela Distribuição T Student-aula12.png" alt="">
+                    Fonte: Portal UFRN, 2025
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode')
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>

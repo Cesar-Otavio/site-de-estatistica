@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6: Medidas de Dispersão ou Variabilidade</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .doc-section {
+            background: #16243a;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.08);
+            padding: 2rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 850px;
+            color: #f7faff;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+        .doc-section h1, .doc-section h2, .doc-section h3 {
+            color: #2ecc71;
+            font-weight: 800;
+            margin-top: 1.5rem;
+        }
+        .doc-section h1 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+        }
+        .doc-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+        .doc-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-section ul {
+            margin: 0.7rem 0 1.2rem 1.5rem;
+        }
+        .doc-section li {
+            margin-bottom: 0.5rem;
+        }
+        .doc-section .curiosidades {
+            background: #1e90ff22;
+            border-left: 5px solid #2ecc71;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+        .doc-section .figura, .doc-section .grafico, .doc-section .formula {
+            background: #22314a;
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            margin: 1.2rem 0;
+            color: #b3c6e0;
+            font-size: 0.98rem;
+            font-style: italic;
+        }
+        @media (max-width: 700px) {
+            .doc-section {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='../index.html'">
+            <img src="../image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="../creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="../sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+       
+    </header>
+    <main>
+        <section class="doc-section">
+            <h1>AULA 6: Medidas de Dispersão ou Variabilidade</h1>
+            <h2>Medidas de Dispersão ou Variabilidade</h2>
+            <ul>
+                <li>São medidas fundamentais para entender a dispersão dos dados em um conjunto.</li>
+            </ul>
+            <h3>Desvio Padrão</h3>
+            <ul>
+                <li>É a raiz quadrada da variância e fornece uma medida de dispersão dos dados que está na mesma unidade dos dados originais.</li>
+                <li>
+                    <span class="formula">
+                        Fórmula (Normal):<br>
+                        DP = √(∑fi(yi - ȳ)² / ∑fi)<br>
+                        Fórmula (Breve):<br>
+                        DP = √(∑fi yi² / ∑fi - (∑fi yi / ∑fi)²)
+                    </span>
+                </li>
+            </ul>
+            <h3>Variância</h3>
+            <ul>
+                <li>É uma medida que indica o quanto os dados de um conjunto se dispersam em relação à média.</li>
+                <li>Fornece a ideia de quão longe os valores estão da média.</li>
+                <li>
+                    <span class="formula">
+                        Fórmula: S² = ∑fi(yi - ȳ)² / ∑fi
+                    </span>
+                </li>
+            </ul>
+            <h3>Coeficiente de Variação</h3>
+            <ul>
+                <li>É uma medida relativa de dispersão e é calculado como a razão do desvio padrão pela média, expressa em porcentagem.</li>
+                <li>Permite comparar a variabilidade entre diferentes conjuntos de dados com médias diferentes.</li>
+                <li>
+                    <span class="formula">
+                        CV = (S / ȳ) × 100%<br>
+                        Onde S é o desvio padrão e ȳ é a média.
+                    </span>
+                </li>
+                <li>Um CV mais alto indica maior variabilidade em relação à média, enquanto um CV mais baixo sugere menor variabilidade.</li>
+            </ul>
+            <div class="figura">
+                Tipo de dispersão:<br>
+                CV &lt; 5% (baixa)<br>
+                5% &lt; CV &lt; 30% (moderada)<br>
+                30% &lt; CV &lt; 50% (alta)<br>
+                CV &gt; 50% (muito alta)
+            </div>
+            <h3>EXERCÍCIOS:</h3>
+            <ol>
+                <li>
+                    Construir a tabela de distribuição de frequência.<br>
+                    <span class="figura">Tabela 5 - TDF para medidas de dispersão</span>
+                    <img src="../image/image-aulas/TDF para medidas de dispersão-aula6.png" alt="">
+                </li>
+                <li>
+                    Obter o Desvio Padrão (S) (processo normal e breve), Variância (S²) e Coeficiente de variação (Cv);<br>
+                    <span class="formula">
+                        DP Normal: S = √(1389275 / 440 - (21835 / 440)²) = 3157,443 - 2462,640 = 26,359 minutos<br>
+                        DP Breve: S = √(1623 / 440 - (341 / 440)²) = 3,688 - 0,600 = 24,601 minutos<br>
+                        S² = 26,359² = 694,796 ≅ 695 minutos<br>
+                        Cv = (26,359 / 49,625) × 100% = 53,11%
+                    </span>
+                </li>
+                <li>
+                    Aplicar a regra empírica e classificar o coeficiente de variação quanto ao tipo de dispersão.<br>
+                    <span class="figura">Coeficiente de Variação = 53,11%. Dispersão muito alta.</span>
+                </li>
+            </ol>
+            <div class="curiosidades">
+                <h3>CURIOSIDADES:</h3>
+                <p>
+                    As medidas de dispersão podem ser aplicadas em diversas situações cotidianas, como no contexto dos investimentos, por exemplo. Para ilustrar essa aplicação, utilizaremos o desvio padrão.
+                </p>
+                <p>
+                    Consideremos dois tipos de aplicações que apresentam, em média, o mesmo rendimento. A diferença entre elas reside no fato de que uma apresenta resultados consistentes, enquanto a outra exibe variações significativas - oscilando constantemente. Mesmo com a mesma média, a aplicação que apresenta maior variabilidade é considerada mais arriscada. Isso ocorre porque o desvio padrão indica o grau em que os valores se afastam da média. Assim, investidores tendem a analisar não apenas o potencial de rendimento do capital, mas também a possibilidade de oscilações excessivas. Dessa forma, é possível optar por alternativas mais seguras, com menores surpresas ao longo do percurso.
+                </p>
+                <p>
+                    Em síntese, neste exemplo, o desvio padrão é utilizado para mensurar a variação dos valores em relação à média. Quanto maior for esse índice, maior será o risco e a instabilidade dos resultados.
+                </p>
+            </div>
+        </section>
+    </main>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode')
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 11: Estimativa: Intervalo de Confiança da Média</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .doc-section {
+            background: #16243a;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.08);
+            padding: 2rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 850px;
+            color: #f7faff;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+        .doc-section h1, .doc-section h2, .doc-section h3 {
+            color: #2ecc71;
+            font-weight: 800;
+            margin-top: 1.5rem;
+        }
+        .doc-section h1 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+        }
+        .doc-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+        .doc-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-section ul {
+            margin: 0.7rem 0 1.2rem 1.5rem;
+        }
+        .doc-section li {
+            margin-bottom: 0.5rem;
+        }
+        .doc-section .curiosidades {
+            background: #1e90ff22;
+            border-left: 5px solid #2ecc71;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+        .doc-section .figura, .doc-section .grafico, .doc-section .formula {
+            background: #22314a;
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            margin: 1.2rem 0;
+            color: #b3c6e0;
+            font-size: 0.98rem;
+            font-style: italic;
+        }
+        @media (max-width: 700px) {
+            .doc-section {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='../index.html'">
+            <img src="../image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="../creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aula8.html">AULA 8: Infográficos e Acrósticos</a>
+                    <a href="aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="../sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+        
+    </header>
+    <main>
+        <section class="doc-section">
+            <h1>AULA 11: Estimativa: Intervalo de Confiança da Média</h1>
+            <h2>Intervalo de Confiança</h2>
+            <p>
+                Intervalo de confiança é uma faixa de valores que tem uma certa probabilidade de conter o valor verdadeiro de um parâmetro populacional, como a média ou a proporção.
+            </p>
+            <p>
+                <strong>Explicando de forma simples:</strong><br>
+                Imagine que você quer saber a média de altura de todos os alunos de uma escola, mas só mede a altura de uma amostra (um grupo menor de alunos). Com base nessa amostra, você estima a média da escola inteira. Mas, como é só uma amostra, pode haver erro.<br>
+                O intervalo de confiança é uma maneira de dizer:<br>
+                “Com X% de confiança, acreditamos que a média verdadeira da população está entre A e B.”
+            </p>
+            <div class="figura">
+                <strong>Exemplo:</strong><br>
+                Suponha que a média de altura da amostra seja 1,65 m e o intervalo de confiança de 95% seja de 1,62 m a 1,68 m. Isso significa:<br>
+                “Estamos 95% confiantes de que a altura média de todos os alunos da escola está entre 1,62 m e 1,68 m.”
+            </div>
+            <h3>Coisas importantes:</h3>
+            <ul>
+                <li>O nível de confiança mais comum é 95%, mas também podem ser usados 90% ou 99%.</li>
+                <li>Um intervalo mais estreito é mais preciso, mas normalmente exige uma amostra maior ou menor variabilidade nos dados.</li>
+                <li>O intervalo de confiança não garante que o valor verdadeiro esteja dentro da faixa — ele só expressa a confiança com base na amostra e no modelo estatístico.</li>
+            </ul>
+            <h2>Estimativa do Intervalo de Confiança da Média</h2>
+            <p>
+                A estimativa do intervalo de confiança da média é uma ferramenta que permite estimar um intervalo dentro do qual podemos afirmar, com um certo nível de confiança, que a média populacional se encontra.
+            </p>
+            <h3>Passo a passo para calcular:</h3>
+            <ol>
+                <li>Coletar os dados: é necessária uma amostra aleatória da população.<br>
+                    n = tamanho da amostra<br>
+                    <span class="formula">x&#772; = média da amostra</span><br>
+                    <span class="formula">s = desvio padrão da amostra</span>
+                </li>
+                <li>Escolher o Nível de Confiança: determina a porcentagem de intervalos que conterão a média populacional se repetirmos a amostragem várias vezes.</li>
+                <li>Encontrar o Valor Crítico: dependendo do tamanho da amostra e do nível de confiança, utilizaremos uma distribuição normal (Z) ou t de student:
+                    <ul>
+                        <li>Para amostras grandes (n &gt; 30), geralmente usamos a distribuição normal.</li>
+                        <li>Para amostras pequenas (n ≤ 30), usamos a distribuição t.</li>
+                    </ul>
+                    Os valores críticos podem ser encontrados em tabelas específicas ou calculadoras estatísticas.
+                </li>
+                <li>Calcular o Erro Padrão da Média<br>
+                    <span class="formula">EPM = s / √n</span>
+                </li>
+                <li>Calcular o Intervalo de Confiança<br>
+                    <span class="formula">IC = x&#772; ± valor_crítico × EPM</span>
+                    <br>O valor crítico é multiplicado pelo erro padrão para determinar a margem de erro.
+                </li>
+            </ol>
+            <h3>Amplitude do Intervalo de Confiança da Média</h3>
+            <p>
+                A amplitude do intervalo de confiança de média é a diferença entre os limites superior e inferior do intervalo de confiança. Essa amplitude indica a precisão da estimativa da média populacional: quanto menor a amplitude, mais precisa é a estimativa.
+            </p>
+            <span class="formula">
+                Amplitude = Limite Superior - Limite Inferior
+            </span>
+            <h4>Passo a passo:</h4>
+            <ol>
+                <li>Calcular o intervalo de confiança</li>
+                <li>Determinar os limites:
+                    <ul>
+                        <li>Limite inferior: x&#772; - valor_crítico × EPM</li>
+                        <li>Limite superior: x&#772; + valor_crítico × EPM</li>
+                    </ul>
+                </li>
+                <li>Substituir os limites na fórmula da amplitude:
+                    <span class="formula">
+                        Amplitude = [x&#772; + valor_crítico × EPM] - [x&#772; - valor_crítico × EPM] = 2 × valor_crítico × EPM
+                    </span>
+                </li>
+            </ol>
+            <h3>EXERCÍCIOS:</h3>
+            <ol>
+                <li>
+                    Obter ICM e fazer esboço dos gráficos para destacar área (%) sob a curva normal<br>
+                    <span class="figura">Tabela 7 - Limite Confiança</span><br>
+                    <img src="../image/image-aulas/Limite Confiança-aula11.png" alt="">
+                    N = n = ∑fi = 440 gols<br>
+                    μ = Me = 49,625 minutos;<br>
+                    S = 26,359 minutos
+                </li>
+                <li>
+                    <strong>A) 99,73%</strong><br>
+                    99,73% → valor crítico = 3,00<br>
+                    <span class="formula">
+                        49,625 ± 3,00 × 26,359 / √440<br>
+                        49,625 ± 3,7698<br>
+                        Limite superior: 53,3948 minutos<br>
+                        Limite inferior: 45,8552 minutos
+                    </span>
+                    <div class="grafico">Gráfico 19 - IMC 99,73%</div>
+                    <img src="../image/image-aulas/IMC 99.73-aula11.png" alt="">
+                </li>
+                <li>
+                    <strong>B) 99%</strong><br>
+                    99% → valor crítico = 2,58<br>
+                    <span class="formula">
+                        49,625 ± 2,58 × 26,359 / √440<br>
+                        49,625 ± 3,2420<br>
+                        Limite superior: 52,8670 minutos<br>
+                        Limite inferior: 46,3830 minutos
+                    </span>
+                    <div class="grafico">Gráfico 20 - IMC 99%</div>
+                    <img src="../image/image-aulas/IMC 99-aula11.png" alt="">
+                </li>
+                <li>
+                    <strong>C) 98%</strong><br>
+                    98% → valor crítico = 2,33<br>
+                    <span class="formula">
+                        49,625 ± 2,33 × 26,359 / √440<br>
+                        49,625 ± 2,9278<br>
+                        Limite superior: 52,5528 minutos<br>
+                        Limite inferior: 46,6972 minutos
+                    </span>
+                    <div class="grafico">Gráfico 21 - IMC 98%</div>
+                    <img src="../image/image-aulas/IMC 98-aula11.png" alt="">
+                </li>
+                <li>
+                    <strong>D) 96%</strong><br>
+                    96% → valor crítico = 2,05<br>
+                    <span class="formula">
+                        49,625 ± 2,05 × 26,359 / √440<br>
+                        49,625 ± 3,3066<br>
+                        Limite superior: 52,9316 minutos<br>
+                        Limite inferior: 46,3184 minutos
+                    </span>
+                    <div class="grafico">Gráfico 22 - IMC 96%</div>
+                    <img src="../image/image-aulas/IMC 96-aula11.png" alt="">
+                </li>
+                <li>
+                    <strong>E) 95,45%</strong><br>
+                    95,45% → valor crítico = 2,00<br>
+                    <span class="formula">
+                        49,625 ± 2,00 × 26,359 / √440<br>
+                        49,625 ± 2,5132<br>
+                        Limite superior: 52,1382 minutos<br>
+                        Limite inferior: 47,1118 minutos
+                    </span>
+                    <div class="grafico">Gráfico 23 - IMC 95,45%</div>
+                    <img src="../image/image-aulas/IMC 95.45-aula11.png" alt="">
+                </li>
+                <li>
+                    <strong>F) 95%</strong><br>
+                    95% → valor crítico = 1,96<br>
+                    <span class="formula">
+                        49,625 ± 1,96 × 26,359 / √440<br>
+                        49,625 ± 2,4629<br>
+                        Limite superior: 52,0879 minutos<br>
+                        Limite inferior: 47,1621 minutos
+                    </span>
+                    <div class="grafico">Gráfico 24 - IMC 95%</div>
+                    <img src="../image/image-aulas/IMC 95-aula11.png" alt="">
+                </li>
+                <li>
+                    <strong>G) 90%</strong><br>
+                    90% → valor crítico = 1,645<br>
+                    <span class="formula">
+                        49,625 ± 1,645 × 26,359 / √440<br>
+                        49,625 ± 2,0671<br>
+                        Limite superior: 51,6921 minutos<br>
+                        Limite inferior: 47,5579 minutos
+                    </span>
+                    <div class="grafico">Gráfico 25 - IMC 90%</div>
+                    <img src="../image/image-aulas/IMC 90-aula.png" alt="">
+                </li>
+                <li>
+                    <strong>H) 80%</strong><br>
+                    80% → valor crítico = 1,28<br>
+                    <span class="formula">
+                        49,625 ± 1,28 × 26,359 / √440<br>
+                        49,625 ± 1,6084<br>
+                        Limite superior: 51,2334 minutos<br>
+                        Limite inferior: 48,0166 minutos
+                    </span>
+                    <div class="grafico">Gráfico 26 - IMC 80%</div>
+                    <img src="../image/image-aulas/IMC 80-aula11.png" alt="">
+                </li>
+                <li>
+                    <strong>I) 68,27%</strong><br>
+                    68,27% → valor crítico = 1,00<br>
+                    <span class="formula">
+                        49,625 ± 1,00 × 26,359 / √440<br>
+                        49,625 ± 1,2566<br>
+                        Limite superior: 50,8816 minutos<br>
+                        Limite inferior: 48,3684 minutos
+                    </span>
+                    <div class="grafico">Gráfico 27 - IMC 68,27%</div>
+                    <img src="../image/image-aulas/IMC 68.27-aula11.png" alt="">
+                </li>
+                <li>
+                    <strong>J) 50%</strong><br>
+                    50% → valor crítico = 0,6745<br>
+                    <span class="formula">
+                        49,625 ± 0,6745 × 26,359 / √440<br>
+                        49,625 ± 0,8475<br>
+                        Limite superior: 50,4725 minutos<br>
+                        Limite inferior: 48,7775 minutos
+                    </span>
+                    <div class="grafico">Gráfico 28 - IMC 50%</div>
+                    <img src="../image/image-aulas/IMC 50-aula11.png" alt="">
+                </li>
+            </ol>
+            <div class="curiosidades">
+                <h3>CURIOSIDADES:</h3>
+                <p>
+                    O intervalo de confiança é usado até em pesquisas eleitorais!<br>
+                    Quando vemos algo como “Candidato X tem 52% das intenções de voto com margem de erro de 2 pontos percentuais”, na verdade, isso é um intervalo de confiança! Significa que, com 95% de confiança, o verdadeiro valor está entre 50% e 54%. Mesmo com toda a tecnologia, a estatística é o que garante credibilidade nas previsões políticas.
+                </p>
+            </div>
+        </section>
+    </main>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode')
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>

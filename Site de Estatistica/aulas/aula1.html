@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1: População, Amostra, Variável Quantitativa e Qualitativa</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .doc-section {
+            background: #16243a;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.08);
+            padding: 2rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 850px;
+            color: #f7faff;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+        .doc-section h1, .doc-section h2, .doc-section h3 {
+            color: #2ecc71;
+            font-weight: 800;
+            margin-top: 1.5rem;
+        }
+        .doc-section h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .doc-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+        .doc-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-section ul {
+            margin: 0.7rem 0 1.2rem 1.5rem;
+        }
+        .doc-section li {
+            margin-bottom: 0.5rem;
+        }
+        .doc-section .curiosidades {
+            background: #1e90ff22;
+            border-left: 5px solid #2ecc71;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+        .doc-section .figura, .doc-section .grafico {
+            background: #22314a;
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            margin: 1.2rem 0;
+            color: #b3c6e0;
+            font-size: 0.98rem;
+            font-style: italic;
+        }
+        @media (max-width: 700px) {
+            .doc-section {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='../index.html'">
+            <img src="../image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="../creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="../sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+        
+    </header>
+    <main>
+        <section class="doc-section">
+            <h1>AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</h1>
+            <h2>Estatística</h2>
+            <p>
+                É a ciência que oferece uma coleção de métodos para produzir e obter dados, organizá-los, resumi-los, analisá-los, interpretá-los e deles extrair conhecimento. Deste modo, a Estatística contribui para que dados gerem conhecimento e, como tal, deve ter como objetivo não só a produção de dados, como também a interpretação de dados já existentes, utilizando a combinação de gráficos, tabelas e medidas numéricas que permitam interpretar o que esses dados significam.
+            </p>
+            <h2>População</h2>
+            <ul>
+                <li>Conjunto de elementos que possuem características em comum;</li>
+                <li>Pode ser finita ou infinita;</li>
+                <li>Pode ser composta por pessoas, objetos, eventos ou elementos.</li>
+            </ul>
+            <p>
+                Na estatística, a população é o conjunto de elementos que possuem características em comum, enquanto a amostra é um subconjunto da população.
+            </p>
+            <h2>Amostra</h2>
+            <ul>
+                <li>Subconjunto da população que será estudado;</li>
+                <li>Deve ser representativa da população;</li>
+                <li>Pode ser probabilística ou não probabilística;</li>
+                <li>Pode ser extraída por meio de técnicas de amostragem, como a casual simples, sistemática ou estratificada. A amostra é utilizada para analisar a população, permitindo obter resultados representativos sem precisar coletar dados de todos os indivíduos.</li>
+            </ul>
+            <div class="figura">
+                Figura 1 - Diagrama de árvore (população/amostra)<br>
+                <img src="../image/image-aulas/Diagrama-de-arvore-aula1.png" alt="">
+                Fonte: Educa Mais Brasil, 2025.
+            </div>
+            <h2>Variáveis qualitativas</h2>
+            <p>
+                São aquelas cujos valores podem ser separados em diferentes categorias que se distinguem por alguma característica não numérica. Por exemplo: sexo (masculino e feminino), cor dos cabelos (preto, loiro, ruivo, castanho, etc). Podem ser subdivididas em:
+            </p>
+            <ul>
+                <li>
+                    <strong>Variáveis qualitativas ordinais:</strong> quando existe uma ordem nos seus valores. Por exemplo, a variável “Grau de instrução” pode ter seus valores ordenados (fundamental, médio, superior, etc). O mesmo não ocorre com a variável “cor da pele”.
+                </li>
+                <li>
+                    <strong>Variáveis qualitativas nominais:</strong> quando uma ordem não pode ser estabelecida entre seus valores.
+                </li>
+            </ul>
+            <h2>Variáveis quantitativas</h2>
+            <p>
+                São aquelas cujos valores são expressos em números. As variáveis quantitativas se subdividem, ainda, em:
+            </p>
+            <ul>
+                <li>
+                    <strong>Variáveis quantitativas discretas:</strong> quando resultam de um conjunto finito (ou enumerável) de valores possíveis. Por exemplo, o número de livros de Matemática da biblioteca da escola e a quantidade de carros presentes, agora, num estacionamento, são variáveis discretas.
+                </li>
+            </ul>
+            <div class="figura">
+                Figura 2 - Diagrama de árvore (variáveis)<br>
+                <img src="../image/image-aulas/Diagrama-de-arvore-(variáveis)-aula1.png" alt="">
+                Fonte: Medium, 2025.
+            </div>
+            <ul>
+                <li>
+                    <strong>Variáveis quantitativas contínuas:</strong> quando resultam de um número infinito de valores possíveis que podem ser associados a pontos em uma escala contínua, de modo que não haja lacunas ou interrupções. Por exemplo, o peso de um pacote de arroz e o comprimento de um parafuso constituem variáveis contínuas.
+                </li>
+            </ul>
+            <h2>Censo</h2>
+            <p>
+                A palavra censo vem do latim census e quer dizer "conjunto dos dados estatísticos dos habitantes de uma cidade, província, estado, nação".
+            </p>
+            <h2>Amostragem</h2>
+            <ul>
+                <li>Amostragem é o processo de selecionar uma parte de uma população para estudar e fazer inferências sobre o todo.</li>
+                <li>A amostragem é importante porque permite economizar recursos e tempo, pois não é necessário pesquisar toda a população.</li>
+            </ul>
+            <p>Existem dois tipos de amostragem:</p>
+            <ul>
+                <li>
+                    <strong>Amostragem probabilística:</strong> A seleção dos elementos da amostra é aleatória, ou seja, cada elemento da população tem a mesma chance de ser escolhido.
+                </li>
+                <li>
+                    <strong>Amostragem não-probabilística:</strong> A seleção dos elementos da amostra é feita de forma deliberada, com base em critérios definidos pelo pesquisador.
+                </li>
+            </ul>
+            <h3>EXERCÍCIO:</h3>
+            <p>
+                Construir um diagrama (conjunto/subconjunto), para registrar exemplos de população, amostra e elemento.
+            </p>
+            <div class="grafico">
+                Gráfico 1 - Diagrama de Venn
+                <img src="../image/image-aulas/Diagrama-de-Venn-aula1.png" alt="">
+            </div>
+            <div class="curiosidades">
+                <h3>CURIOSIDADES:</h3>
+                <strong>Biografia resumida de Neymar</strong><br>
+                Nome completo: Neymar da Silva Santos Júnior<br>
+                Data de nascimento: 5 de fevereiro de 1992.<br>
+                Local de nascimento: Mogi das Cruzes, São Paulo, Brasil.<br><br>
+                Neymar é um dos jogadores de futebol mais conhecidos e talentosos do mundo. Desde jovem, mostrou grande habilidade com a bola e começou sua carreira nas categorias de base do Santos Futebol Clube, onde se destacou rapidamente.
+                <h4>Carreira</h4>
+                <ul>
+                    <li><strong>Santos (2009-2013):</strong> Neymar começou sua carreira profissional no Santos, onde rapidamente se destacou como um dos melhores jovens talentos do Brasil. Ele ajudou o clube a conquistar a Copa do Brasil em 2010 e a Copa Libertadores em 2011.</li>
+                    <li><strong>Barcelona (2013-2017):</strong> Em 2013, transferiu-se para o FC Barcelona, onde formou um trio lendário com Lionel Messi e Luis Suárez. Durante sua passagem pelo clube, ganhou diversos títulos, incluindo a UEFA Champions League em 2015.</li>
+                    <li><strong>Paris Saint-Germain (2017-2024):</strong> Neymar se transferiu para o PSG em uma transferência recorde em 2017. Ele se tornou uma das estrelas mais brilhantes da equipe e conquistou vários títulos da Ligue 1. No entanto, em 2024, ele deixou o PSG após uma série de controvérsias e decisões pessoais.</li>
+                    <li><strong>Retorno ao Santos (2025):</strong> Em uma reviravolta emocionante, Neymar retornou ao Santos em 2025, onde começou sua carreira. O retorno foi calorosamente recebido pelos torcedores e promete trazer nova energia ao clube.</li>
+                </ul>
+                <h4>Seleção Brasileira</h4>
+                <p>
+                    Neymar tem sido um pilar na seleção brasileira desde sua estreia em 2010. Ele participou de várias Copas do Mundo e Copas América, sendo fundamental na conquista da medalha de ouro nos Jogos Olímpicos de 2016 no Rio de Janeiro. Em 2025, ele continua a ser uma figura chave na busca do Brasil por títulos internacionais.
+                </p>
+                <h4>Estilo de Jogo</h4>
+                <p>
+                    Reconhecido por sua velocidade impressionante, dribles habilidosos e capacidade de finalização, Neymar é admirado por fãs e críticos. Seu estilo carismático dentro e fora do campo fez dele um ícone global.
+                </p>
+            </div>
+        </section>
+    </main>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode')
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>

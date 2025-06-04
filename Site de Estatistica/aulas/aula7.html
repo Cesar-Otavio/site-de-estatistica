@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 7: Coeficientes Estatísticos: Assimetria e Curtose</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .doc-section {
+            background: #16243a;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.08);
+            padding: 2rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 850px;
+            color: #f7faff;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+        .doc-section h1, .doc-section h2, .doc-section h3 {
+            color: #2ecc71;
+            font-weight: 800;
+            margin-top: 1.5rem;
+        }
+        .doc-section h1 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+        }
+        .doc-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+        .doc-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-section ul {
+            margin: 0.7rem 0 1.2rem 1.5rem;
+        }
+        .doc-section li {
+            margin-bottom: 0.5rem;
+        }
+        .doc-section .curiosidades {
+            background: #1e90ff22;
+            border-left: 5px solid #2ecc71;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+        .doc-section .figura, .doc-section .grafico, .doc-section .formula {
+            background: #22314a;
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            margin: 1.2rem 0;
+            color: #b3c6e0;
+            font-size: 0.98rem;
+            font-style: italic;
+        }
+        @media (max-width: 700px) {
+            .doc-section {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='../index.html'">
+            <img src="../image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="../creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="../sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+       
+    </header>
+    <main>
+        <section class="doc-section">
+            <h1>AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</h1>
+            <h2>Coeficiente de Assimetria e Coeficiente de Curtose</h2>
+            <p>
+                São medidas estatísticas importantes para descrever a forma de uma distribuição de dados.
+            </p>
+            <h3>Coeficiente de Assimetria</h3>
+            <ul>
+                <li>Mede a simetria da distribuição dos dados.</li>
+                <li>Indica se os dados estão distribuídos de maneira simétrica em torno da média ou se há uma inclinação em uma direção específica.</li>
+                <li><strong>Assimetria positiva:</strong> se o coeficiente for maior que 0, isso indica que a cauda direita da distribuição é mais longa ou mais pesada, ou seja, há valores extremos maiores.</li>
+                <li><strong>Assimetria negativa:</strong> se o coeficiente for menor que 0, isso indica que a cauda esquerda da distribuição é mais longa ou mais pesada, ou seja, há valores extremos menores.</li>
+                <li><strong>Simetria:</strong> um coeficiente igual a 0 sugere que a distribuição é simétrica.</li>
+            </ul>
+            <div class="figura">
+                Figura 15 - Exemplo de Assimetrias<br>
+                <img src="../image/image-aulas/Exemplo de Assimetrias-aula7.png" alt="">
+                Fonte: Sonia Vieira, 2025.
+            </div>
+            <ul>
+                <li>
+                    <span class="formula">Fórmula tipo de assimetria: Ta = (Me - Mo) / S</span>
+                </li>
+                <li>
+                    <span class="formula">Fórmula coeficiente de assimetria: Ca = 3 (Me - Md) / S</span>
+                </li>
+            </ul>
+            <h3>Coeficiente de Curtose</h3>
+            <ul>
+                <li>Mede a “altura” e a “largura” da distribuição de dados.</li>
+                <li>Indica se os dados têm caudas pesadas (muitos valores extremos) ou leves (poucos valores extremos) em comparação com uma distribuição normal.</li>
+                <li><strong>Curtose alta (leptocúrtica):</strong> se o coeficiente for maior que 0,263, isso indica que a distribuição tem caudas pesadas e um pico mais alto do que uma distribuição normal. Isso significa que há mais valores extremos.</li>
+                <li><strong>Curtose baixa (platicúrtica):</strong> se o coeficiente for menor que 0,263, isso indica que a distribuição tem caudas leves e um pico mais baixo do que uma normal. Isso significa que há menos valores extremos.</li>
+                <li><strong>Curtose normal (nula/mesocúrtica):</strong> um coeficiente igual a 0,263 sugere uma distribuição normal.</li>
+            </ul>
+            <div class="figura">
+                Figura 16 - Exemplo de curtose 1<br>
+                <img src="../image/image-aulas/Exemplo de curtose 1-aula7.png" alt="">
+                Fonte: Blog Prof Fernanda Maciel, 2025.
+            </div>
+            <div class="figura">
+                Figura 17 - Exemplo de curtose 2<br>
+                <img src="../image/image-aulas/Exemplo de curtose 2-aula7.png" alt="">
+                Fonte: Estatística para Concurso, 2025.
+            </div>
+            <ul>
+                <li>
+                    <span class="formula">Fórmula: Cc = (Q3 - Q1) / [2(D9 - D1)]</span>
+                </li>
+            </ul>
+            <h3>Relação entre Assimetria e Curtose</h3>
+            <ul>
+                <li>A assimetria está relacionada à direção da distribuição, enquanto a curtose está relacionada à forma e ao peso das caudas.</li>
+                <li>Ambas as medidas são úteis para entender melhor a natureza dos dados e podem influenciar técnicas estatísticas e inferências.</li>
+            </ul>
+            <h3>EXERCÍCIOS:</h3>
+            <ol>
+                <li>
+                    Construir a tabela de distribuição de frequência.<br>
+                    <span class="figura">Tabela 6 - TDF para Coeficientes estatísticos</span>
+                    <img src="../image/image-aulas/TDF para Coeficientes estatísticos-aula7.png" alt="">
+                </li>
+                <li>
+                    Calcular o tipo e coeficiente de assimetria (Ta, Ca) e curtose (Cc);<br>
+                    <span class="formula">
+                        Ta = (49,625 - 39,485) / 26,359 = 10,14 / 26,359 = 0,384<br>
+                        Ca = 3 (49,625 - 49,352) / 26,359 = 3 × 0,273 / 26,359 = 0,0310<br>
+                        Cc = (Q3 - Q1) / [2(D9 - D1)] = (71,315 - 28,031) / [2(85,470 - 12,20)] = 43,284 / 146,54 = 0,295
+                    </span>
+                </li>
+                <li>
+                    Aplicar a regra empírica de dispersão e classificar quanto à assimetria e curtose (grau achatamento).<br>
+                    <span class="figura">
+                        Ta → assimetria à direita<br>
+                        Ca → assimetria à direita<br>
+                        Cc → alta leptocúrtica
+                    </span>
+                </li>
+            </ol>
+            <div class="curiosidades">
+                <h3>CURIOSIDADES:</h3>
+                <p>
+                    De certa forma, os coeficientes estatísticos estão extremamente presentes na contemporaneidade, especialmente quando abordamos a tecnologia como um campo de comparação. Os coeficientes estatísticos são de suma importância na área tecnológica, sobretudo ao lidarmos com grandes volumes de dados.
+                </p>
+                <p>
+                    Por exemplo, o coeficiente de correlação pode ser utilizado para entender se existe uma relação entre o comportamento dos usuários em um aplicativo e o tempo que eles dedicam a ele. Em áreas como aprendizado de máquina (machine learning), esses coeficientes auxiliam na identificação das variáveis mais relevantes para o desempenho de um modelo, como na previsão da probabilidade de um cliente cancelar um serviço.
+                </p>
+                <p>
+                    Em última análise, esses coeficientes constituem ferramentas poderosas que ajudam desenvolvedores e analistas a tomar decisões mais informadas e precisas, desde o desenvolvimento de sistemas até a criação de algoritmos de recomendação, como os utilizados no Netflix ou Spotify.
+                </p>
+                <p>
+                    Concluindo, neste exemplo, empregamos o coeficiente de correlação, que funciona como um termômetro para medir a relação entre dois comparativos. No caso do aplicativo, ele indica se quanto mais tempo o usuário passa no app, maior é a probabilidade de interação ou realização de compras. Isso auxilia os desenvolvedores a compreender padrões e aprimorar a experiência do usuário.
+                </p>
+            </div>
+        </section>
+    </main>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode')
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>

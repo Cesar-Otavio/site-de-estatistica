@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 3: Gráficos Estatísticos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .doc-section {
+            background: #16243a;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.08);
+            padding: 2rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 850px;
+            color: #f7faff;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+        .doc-section h1, .doc-section h2, .doc-section h3 {
+            color: #2ecc71;
+            font-weight: 800;
+            margin-top: 1.5rem;
+        }
+        .doc-section h1 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+        }
+        .doc-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+        .doc-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-section ul {
+            margin: 0.7rem 0 1.2rem 1.5rem;
+        }
+        .doc-section li {
+            margin-bottom: 0.5rem;
+        }
+        .doc-section .curiosidades {
+            background: #1e90ff22;
+            border-left: 5px solid #2ecc71;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+        .doc-section .figura, .doc-section .grafico {
+            background: #22314a;
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            margin: 1.2rem 0;
+            color: #b3c6e0;
+            font-size: 0.98rem;
+            font-style: italic;
+        }
+        @media (max-width: 700px) {
+            .doc-section {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='../index.html'">
+            <img src="../image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="../creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="../sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+        
+    </header>
+    <main>
+        <section class="doc-section">
+            <h1>AULA 3: Gráficos Estatísticos</h1>
+            <h2>Histograma</h2>
+            <ul>
+                <li>É uma representação gráfica que mostra a distribuição de um conjunto de dados quantitativos. Ele é construído a partir de intervalos (ou classes) em que os dados são agrupados. O eixo x representa os intervalos, enquanto o eixo y representa a frequência absoluta de cada intervalo.</li>
+                <li>Cada barra do histograma é proporcional à frequência dos dados naquele intervalo. É uma boa maneira de visualizar a densidade e a distribuição dos dados.</li>
+            </ul>
+            <div class="figura">
+                Figura 3 - Exemplo histograma<br>
+                <img src="../image/image-aulas/Exemplo histograma-aula3.png" alt="">
+                Fonte: Blog de Estatística do Professor Alexandre, 2025.
+            </div>
+            <h2>Polígono de Frequência</h2>
+            <ul>
+                <li>É uma linha que conecta os pontos médios do topo das barras de um histograma. Para construí-lo, primeiro traça um histograma e, em seguida, usa os pontos médios das barras como coordenadas para criar uma linha.</li>
+                <li>É ideal para ajudar a visualizar as tendências dos dados e facilita a comparação entre diferentes conjuntos de dados.</li>
+            </ul>
+            <div class="figura">
+                Figura 4 - Exemplo polígono de frequência<br>
+                <img src="../image/image-aulas/Exemplo polígono de frequência-aula3.png" alt="">
+                Fonte: Ajudando na Matemática, 2025.
+            </div>
+            <h2>Gráficos</h2>
+            <ul>
+                <li>
+                    <strong>Setores:</strong> É utilizado para mostrar a proporção relativa das partes em relação ao todo. Cada setor representa uma categoria e o tamanho do setor é proporcional à quantidade ou porcentagem dessa categoria em relação ao total. É ideal para visualizar dados qualitativos ou categorias.
+                    <div class="figura">
+                        Figura 5 - Exemplo gráfico de setores<br>
+                        <img src="../image/image-aulas/Exemplo gráfico de setores-aula3.png" alt="">
+                        Fonte: Professor Guru, 2025.
+                    </div>
+                </li>
+                <li>
+                    <strong>Barras:</strong> Utilizado para comparar diferentes categorias. As barras podem ser verticais ou horizontais e representam a frequência ou a quantidade de cada categoria.
+                    <div class="figura">
+                        Figura 6 - Exemplo gráfico de barras<br>
+                        <img src="../image/image-aulas/Exemplo gráfico de barras-aula3.png" alt="">
+                        Fonte: Hashtag Treinamentos, 2025.
+                    </div>
+                </li>
+                <li>
+                    <strong>Colunas:</strong> Semelhante ao gráfico de barras, mas com as barras dispostas verticalmente. Frequentemente utilizado para mostrar variações ao longo do tempo.
+                    <div class="figura">
+                        Figura 7 - Exemplo gráfico de colunas<br>
+                        <img src="../image/image-aulas/Exemplo gráfico de colunas-aula3.png" alt="">
+                        Fonte: Mundo Educação, 2025.
+                    </div>
+                </li>
+                <li>
+                    <strong>Linhas:</strong> Ideal para mostrar tendências ao longo do tempo, esse gráfico conecta pontos de dados com linhas. Muito utilizado em análises financeiras e científicas.
+                    <div class="figura">
+                        Figura 8 - Exemplo gráfico de linhas<br>
+                        <img src="../image/image-aulas/Exemplo gráfico de linhas-aula3.png" alt="">
+                        Fonte: Excel Easy, 2025.
+                    </div>
+                </li>
+                <li>
+                    <strong>Áreas:</strong> É semelhante ao gráfico de linhas, mas a área abaixo da linha é preenchida com uma cor. É utilizado para mostrar a magnitude das mudanças ao longo do tempo e pode representar partes do todo.
+                    <div class="figura">
+                        Figura 9 - Exemplo gráfico de áreas<br>
+                        <img src="../image/image-aulas/Exemplo gráfico de áreas-aula3.png" alt="">
+                        Fonte: Ninja do Excel, 2025.
+                    </div>
+                </li>
+                <li>
+                    <strong>Redes:</strong> É usado para representar relações entre diferentes entidades. Comum em análises sociais e biológicas, onde se deseja visualizar conexões e interações entre elementos.
+                    <div class="figura">
+                        Figura 10 - Exemplo gráfico de redes<br>
+                        <img src="../image/image-aulas/Exemplo gráfico de redes-aula3.png" alt="">
+                        Fonte: ResearchGate, 2025.
+                    </div>
+                </li>
+            </ul>
+            <h3>EXERCÍCIO:</h3>
+            <p>Gerar os gráficos das variáveis qualitativas e quantitativas.</p>
+            <div class="grafico">
+                <strong>Gráficos qualitativos:</strong><br>
+                Gráfico 2 - Gols de Neymar por clube (fi)<br>
+                <img src="../image/image-aulas/Gols de Neymar por clube (fi)-aula3.png" alt="">
+                Gráfico 3 - Gols de Neymar por clube (FI)<br>
+                <img src="../image/image-aulas/Gols de Neymar por clube (FI)-aula3.1.png" alt="">
+                Gráfico 4 – Setores: Gols de Neymar por clube (FI)
+                <img src="../image/image-aulas/Setores Gols de Neymar por clube (FI)-aula3.png" alt="">
+            </div>
+            <div class="grafico">
+                <strong>Gráficos quantitativos:</strong><br>
+                Gráfico 5 - Histograma + polígono fi(xi): Gols por minutos<br>
+                <img src="../image/image-aulas/Histograma + polígono fi(xi) Gols por minutos-aula3.png" alt="">
+                Gráfico 6 - Histograma + polígono Fi(Li): Gols por minutos<br>
+                <img src="../image/image-aulas/Histograma + polígono Fi(Li) Gols por minutos-aula3.png" alt="">
+                Gráfico 7 - Setores: Gols por minutos (FI)
+                <img src="../image/image-aulas/Setores Gols por minutos (FI)-aula3.png" alt="">
+            </div>
+            <div class="curiosidades">
+                <h3>CURIOSIDADES:</h3>
+                <div class="figura">
+                    Figura 11 - Infográfico Neymar Seleção Brasileira (2014)<br>
+                    <img src="../image/image-aulas/Infográfico Neymar Seleção Brasileira (2014)-aula3.png" alt="">
+                    Fonte: Pinterest, 2025.
+                </div>
+                <div class="figura">
+                    Figura 12 - Infográfico Neymar (2018)<br>
+                    <img src="../image/image-aulas/Infográfico Neymar (2018)-aula3.png" alt="">
+                    Fonte: Pinterest, 2025.
+                </div>
+                <p>
+                    Saiba mais em: <a href="https://www.transfermarkt.com.br/neymar/profil/spieler/68290" target="_blank" style="color:#2ecc71;">https://www.transfermarkt.com.br/neymar/profil/spieler/68290</a>
+                </p>
+            </div>
+        </section>
+    </main>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode')
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>

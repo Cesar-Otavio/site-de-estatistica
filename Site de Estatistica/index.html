@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho de Estatística - Ciência da Computação</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: #101b2a;
+            color: #f7faff;
+        }
+        body.light-mode {
+            background: #f7faff;
+            color: #1a2233;
+        }
+        body.light-mode .header,
+        body.light-mode nav.nav {
+            background: #fff !important;
+            color: #1a2233 !important;
+        }
+        body.light-mode .logo span {
+            color: #1a2233 !important;
+        }
+        body.light-mode .nav a,
+        body.light-mode .dropdown-btn {
+            color: #1a2233 !important;
+        }
+        body.light-mode .dropdown-content {
+            background: #f0f4fa !important;
+        }
+        body.light-mode .theme-toggle i {
+            color: #1a2233 !important;
+        }
+        body.light-mode .hero,
+        body.light-mode .descricao,
+        body.light-mode .cards,
+        body.light-mode .cta-banner,
+        body.light-mode .card {
+            background: #fff;
+            color: #1a2233;
+        }
+        body.light-mode .card h3,
+        body.light-mode .hero h1,
+        body.light-mode .cta-banner h2 {
+            color: #1e90ff;
+        }
+        body.light-mode .card p,
+        body.light-mode .descricao p,
+        body.light-mode .hero .subtitle {
+            color: #3a4a6a;
+        }
+        body.light-mode .btn,
+        body.light-mode .btn.btn-green {
+            background: #1e90ff;
+            color: #fff;
+        }
+        body.light-mode .btn.btn-outline {
+            background: transparent;
+            color: #1e90ff;
+            border: 2px solid #1e90ff;
+        }
+        body.light-mode .card-link {
+            color: #1e90ff;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='index.html'">
+            <img src="image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aulas/aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aulas/aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aulas/aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aulas/aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aulas/aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aulas/aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aulas/aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aulas/aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aulas/aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aulas/aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aulas/aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aulas/aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aulas/aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Estatística</h1>
+            <p class="subtitle">
+                Aprenda estatística de forma moderna, interativa e aplicada ao mundo real. Descubra como os dados transformam decisões e impulsionam o futuro!
+            </p>
+            <div class="hero-buttons">
+                <a href="aulas/aula1.html" class="btn btn-green">Começar a Aprender</a>
+                <a href="sobreEstatistica.html" class="btn btn-outline">Sobre Estatística</a>
+            </div>
+        </section>
+
+        <section class="descricao">
+            <p>
+                Este estudo apresenta uma análise aprofundada sobre tópicos fundamentais na área de dados e estatística, abordando conceitos e técnicas essenciais para o desenvolvimento em matemática aplicada. Discute-se os fundamentos da Estatística, incluindo população, amostra e tipos de variáveis (quantitativas e qualitativas). A organização e representação dos dados são exploradas por meio de tabelas de frequência e gráficos estatísticos. Além disso, analisam-se medidas de tendência central (média, mediana, moda), separatrizes (quartis, decis, percentis) e medidas de dispersão (amplitude, variância, desvio padrão). O estudo também inclui distribuições de probabilidade (Binomial, Poisson, Normal), intervalos de confiança, testes de hipóteses e significância. As distribuições t de Student e Qui-quadrado são abordadas, assim como a análise de correlação e regressão linear para investigar relações entre variáveis. O objetivo principal é compreender a teoria por trás de cada conceito e aplicá-los na prática, utilizando exemplos detalhados do desempenho do jogador Neymar, especialmente em relação aos seus gols, para facilitar a assimilação. Destaca-se a importância dos conceitos estatísticos na análise dos dados sobre os gols marcados por Neymar ao longo da sua carreira, contribuindo para uma tomada de decisão mais embasada nas estratégias esportivas.
+            </p>
+            <div class="download-center">
+                <a href="assets/docs/estatistica site trab.pdf" class="btn btn-green" download>
+                    <i class="fa-solid fa-file-arrow-down"></i> Baixar Conteúdo em PDF
+                </a>
+            </div>
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <i class="fa-solid fa-chalkboard-user card-icon"></i>
+                <h3>Aulas</h3>
+                <p>Acesse 14 aulas completas sobre estatística, desde conceitos básicos até análises avançadas.</p>
+                <a href="aulas/aula1.html" class="card-link">Ver mais <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-lightbulb card-icon"></i>
+                <h3>Sobre Estatística</h3>
+                <p>Entenda as origens, a importância e as aplicações práticas da estatística no mundo moderno.</p>
+                <a href="sobreEstatistica.html" class="card-link">Ver mais <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-users card-icon"></i>
+                <h3>Créditos</h3>
+                <p>Conheça os alunos, professores e a instituição que contribuíram para este projeto educacional.</p>
+                <a href="creditos.html" class="card-link">Ver mais <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="cta-content">
+                <h2>Pronto para transformar seu conhecimento?</h2>
+                <a href="aulas/aula1.html" class="btn btn-green btn-lg">Iniciar Jornada</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        
+
+        // Dropdown menu de aulas
+        const dropdown = document.getElementById('aulasDropdown');
+        const dropdownBtn = document.getElementById('dropdownBtn');
+        const dropdownContent = document.getElementById('dropdownContent');
+
+        dropdownBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdown.classList.toggle('open');
+            dropdownBtn.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('open');
+                dropdownBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Acessibilidade: fechar com Esc
+        dropdownBtn.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                dropdown.classList.remove('open');
+                dropdownBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html>

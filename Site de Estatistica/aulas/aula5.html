@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5: Separatrizes: Quartil, Quintil, Decil e Percentil</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .doc-section {
+            background: #16243a;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.08);
+            padding: 2rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 850px;
+            color: #f7faff;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+        .doc-section h1, .doc-section h2, .doc-section h3 {
+            color: #2ecc71;
+            font-weight: 800;
+            margin-top: 1.5rem;
+        }
+        .doc-section h1 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+        }
+        .doc-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+        .doc-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-section ul {
+            margin: 0.7rem 0 1.2rem 1.5rem;
+        }
+        .doc-section li {
+            margin-bottom: 0.5rem;
+        }
+        .doc-section .curiosidades {
+            background: #1e90ff22;
+            border-left: 5px solid #2ecc71;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+        .doc-section .figura, .doc-section .grafico, .doc-section .formula {
+            background: #22314a;
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            margin: 1.2rem 0;
+            color: #b3c6e0;
+            font-size: 0.98rem;
+            font-style: italic;
+        }
+        @media (max-width: 700px) {
+            .doc-section {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='../index.html'">
+            <img src="../image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="../creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="../sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+        
+    </header>
+    <main>
+        <section class="doc-section">
+            <h1>AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</h1>
+            <h2>Separatrizes</h2>
+            <p>
+                Separatrizes são elementos que separam a sequência de valores em partes iguais, permitindo uma análise mais fácil da distribuição dos dados.
+            </p>
+            <h3>Quartis</h3>
+            <ul>
+                <li>Dividem os dados em quatro partes iguais.</li>
+                <li>Q1 (primeiro quartil): 25% dos dados estão abaixo dele.</li>
+                <li>Q2 (segundo quartil ou mediana): 50% dos dados estão abaixo dele.</li>
+                <li>Q3 (terceiro quartil): 75% dos dados estão abaixo dele.</li>
+            </ul>
+            <h3>Quintis</h3>
+            <ul>
+                <li>Dividem os dados em cinco partes iguais.</li>
+                <li>Cada quintil representa 20% dos dados. O primeiro quintil (K1) é o ponto que separa os 20% inferiores do restante.</li>
+            </ul>
+            <h3>Decis</h3>
+            <ul>
+                <li>Dividem os dados em dez partes iguais.</li>
+                <li>Cada decil representa 10% dos dados. O primeiro decil (D1) é o ponto que separa os 10% inferiores.</li>
+            </ul>
+            <h3>Percentis</h3>
+            <ul>
+                <li>Dividem os dados em cem partes iguais.</li>
+                <li>Cada percentil representa 1% dos dados. O percentil 25, por exemplo, é o valor abaixo do qual 25% dos dados se encontram.</li>
+            </ul>
+            <h3>Correspondência</h3>
+            <div class="figura">
+                Q1 = P25<br>
+                Q2 = P50 = Md<br>
+                Q3 = P75<br>
+                K1 = D2 = P20<br>
+                K2 = D4 = P40<br>
+                K3 = D6 = P60<br>
+                D1 = P10<br>
+                D5 = Q2 = P50 = Md<br>
+                D9 = P90
+            </div>
+            <h3>EXERCÍCIOS:</h3>
+            <ol>
+                <li>
+                    Construir a tabela de distribuição de frequência e representar o polígono Fi.<br>
+                    <span class="figura">Tabela 4 - TDF para separatrizes</span>
+                </li>
+                <img src="../image/image-aulas/TDF para separatrizes-aula5.png" alt="">
+                <li>
+                    Determinar as seguintes separatrizes: Quartil (Q2), Quintil (K3), Decil (D9) e Percentil (P30);<br>
+                    <span class="formula">
+                        Q2 = 2∑fi / 4 = 2×440 / 4 = 880 / 4 = 220<br>
+                        Q2 = (46 + 220) / 203 = 71, 14, 46, 3,352, 49,352 minutos, 50%<br>
+                        K3 = 3∑fi / 5 = 3×440 / 5 = 1320 / 5 = 264<br>
+                        K3 = (46 + 264) / 203 = 71, 14, 46, 12,028, 58,028 minutos, 60%<br>
+                        D9 = 9∑fi / 10 = 9×440 / 10 = 3960 / 10 = 396<br>
+                        D9 = (76 + 396) / 350 = 68, 14, 76, 9,470, 85,470 minutos, 90%<br>
+                        P30 = 30∑fi / 100 = 30×440 / 100 = 13200 / 100 = 132<br>
+                        P30 = (31 + 132) / 119 = 84, 14, 31, 2,166, 33,166 minutos, 30%
+                    </span>
+                </li>
+                <li>
+                    Posicionar os resultados Q2, K3, D9, P90 no polígono frequência acumulada (Fi).<br>
+                    <span class="grafico">Gráfico 9 – Histograma + polígono + separatrizes</span>
+                    <img src="../image/image-aulas/Histograma + polígono + separatrizes-aula5.png" alt="">
+                </li>
+            </ol>
+            <div class="curiosidades">
+                <h3>CURIOSIDADES:</h3>
+                <strong>Unidades de Medida</strong>
+                <p>
+                    Unidades de medida são padrões que permitem quantificar propriedades como comprimento, massa, volume, tempo e capacidade.<br>
+                    Algumas unidades de medida são: Quilômetro (km), Hectômetro (hm), Decâmetro (dam), Metro (m), Decímetro (dm), Centímetro (cm), Milímetro (mm), Quilograma (kg), Segundo (s), Litro (L).
+                </p>
+                <strong>Regras de arredondamento</strong>
+                <p>
+                    As regras de arredondamento dependem do algarismo imediatamente à direita dos que serão mantidos. Para o arredondamento, a referência é o algarismo 5.
+                </p>
+                <ul>
+                    <li><strong>Algarismo à direita menor que 5:</strong> Os algarismos mantidos são conservados sem alteração.<br>
+                        Exemplo: Arredondar 5,1328 com duas casas decimais. O arredondamento é: 5,13.
+                    </li>
+                    <li><strong>Algarismo à direita maior que 5:</strong> Acrescenta-se uma unidade ao último algarismo mantido.<br>
+                        Exemplo: Arredondar 1,236 com duas casas decimais. O arredondamento é: 1,24.
+                    </li>
+                    <li><strong>Algarismo à direita igual a 5:</strong>
+                        <ul>
+                            <li>
+                                Se houver pelo menos um algarismo diferente de zero, depois do 5, acrescenta-se uma unidade à última casa decimal mantida.<br>
+                                Exemplo: Arredondar 1,35000001 com uma casa depois da vírgula. O arredondamento é: 1,4.
+                            </li>
+                            <li>
+                                Se todos os algarismos após o 5 são zeros e o número mantido é ímpar, soma-se uma unidade ao último algarismo mantido.<br>
+                                Exemplo: Arredondar 4,2750 com duas casas decimais. O arredondamento é: 4,28.
+                            </li>
+                            <li>
+                                Se todos os algarismos após o 5 são zeros e o número mantido é par, não há mudança no número mantido e este permanece o mesmo.<br>
+                                Exemplo: Arredondar 16,825000 com duas casas decimais. O arredondamento é: 16,82.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode')
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>

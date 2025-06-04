@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 13: Testes e Hipóteses</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .doc-section {
+            background: #16243a;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.08);
+            padding: 2rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 850px;
+            color: #f7faff;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+        .doc-section h1, .doc-section h2, .doc-section h3 {
+            color: #2ecc71;
+            font-weight: 800;
+            margin-top: 1.5rem;
+        }
+        .doc-section h1 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+        }
+        .doc-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+        .doc-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-section ul {
+            margin: 0.7rem 0 1.2rem 1.5rem;
+        }
+        .doc-section li {
+            margin-bottom: 0.5rem;
+        }
+        .doc-section .curiosidades {
+            background: #1e90ff22;
+            border-left: 5px solid #2ecc71;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+        .doc-section .figura, .doc-section .grafico, .doc-section .formula {
+            background: #22314a;
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            margin: 1.2rem 0;
+            color: #b3c6e0;
+            font-size: 0.98rem;
+            font-style: italic;
+        }
+        @media (max-width: 700px) {
+            .doc-section {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='../index.html'">
+            <img src="../image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="../creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aula8.html">AULA 8: Infográficos e Acrósticos</a>
+                    <a href="aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="../sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+       
+    </header>
+    <main>
+        <section class="doc-section">
+            <h1>AULA 13: Testes e Hipóteses</h1>
+            <h2>Teste de Hipótese</h2>
+            <p>
+                Um teste de hipótese é um procedimento estatístico utilizado para tomar decisões sobre uma população com base em informações obtidas de uma amostra. O objetivo é avaliar se há evidências suficientes nos dados amostrais para rejeitar a hipótese nula em favor da hipótese alternativa.
+            </p>
+            <h3>Hipótese Nula (H0)</h3>
+            <p>
+                A hipótese nula é uma afirmação que sugere que não há efeito ou diferença significativa entre grupos ou condições. É o ponto de partida do teste e, geralmente, representa a posição conservadora que busca testar. Por exemplo, H0 pode afirmar que a média de duas populações é igual.
+            </p>
+            <h3>Hipótese Alternativa (H1 ou Ha)</h3>
+            <p>
+                A hipótese alternativa é a afirmação que contraria a hipótese nula. Ela sugere que há um efeito ou diferença significativa entre os grupos ou condições. Dependendo do tipo de teste, a hipótese alternativa pode ser unilateral (indicando uma direção específica) ou bilateral (sem direção específica).
+            </p>
+            <h3>Nível de Significância do Teste (α)</h3>
+            <p>
+                O nível de significância é o critério usado para decidir se deve rejeitar a hipótese nula. Comumente, é definido como 0,05 (5%), significando que há uma probabilidade de 5% de rejeitar a hipótese nula quando ela é verdadeira. Esse valor representa o risco que o pesquisador está disposto a aceitar.
+            </p>
+            <h3>Região de Aceitação</h3>
+            <p>
+                A região de aceitação é o intervalo de valores da estatística do teste onde não rejeitamos a hipótese nula. Se o valor da estatística do teste cair dentro dessa região, aceitamos H0 e concluímos que não há evidências suficientes para apoiar H1.
+            </p>
+            <h3>Região de Rejeição</h3>
+            <p>
+                A região de rejeição é o intervalo onde rejeitamos a hipótese nula. Se o valor da estatística do teste cair nessa região, rejeitamos H0 e aceitamos H1. A localização dessa região depende do nível de significância e do tipo de teste realizado.
+            </p>
+            <h3>Região Crítica</h3>
+            <p>
+                A região crítica é um termo sinônimo à região de rejeição, referindo-se ao conjunto de valores para os quais a hipótese nula seria rejeitada com base nos dados amostrais coletados e no nível de significância estabelecido.
+            </p>
+            <h3>EXERCÍCIOS:</h3>
+            <ol>
+                <li>
+                    Uma pesquisa realizada por uma empresa especializada afirma que 45% dos profissionais de tecnologia nos Estados Unidos são a favor de substituir linguagens de programação tradicionais, como C e Java, por linguagens mais modernas como Python e Rust nos currículos universitários nos próximos 10 anos. Você decide testar essa informação e entrevista uma amostra de 200 desenvolvedores, dentre os quais 49% apoiam a substituição. Com 5% de significância, há evidência suficiente para apoiar a afirmação?<br>
+                    <span class="formula">
+                        p₀ = 0,45<br>
+                        n = 200<br>
+                        p̂ = 0,49<br>
+                        α = 0,05<br>
+                        H₀ (nula): p = 0,45 (a proporção verdadeira é 45%)<br>
+                        H₁ (alternativa): p ≠ 0,45 (a proporção verdadeira é diferente de 45%)<br>
+                        <br>
+                        Estatística do Teste (Z):<br>
+                        Z = (p̂ - p₀) / sqrt[(p₀(1-p₀))/n]<br>
+                        Z = (0,49 - 0,45) / sqrt[(0,45 × 0,55)/200]<br>
+                        Z = 0,04 / sqrt(0,2475/200)<br>
+                        Z = 0,04 / sqrt(0,0012375)<br>
+                        Z = 0,04 / 0,0352 ≅ 1,137
+                    </span>
+                    <span class="formula">
+                        Valor Crítico (Z crítico): Z<sub>α/2</sub> ≅ 1,96<br>
+                        Regra: Rejeita-se H₀ se |Z| &gt; 1,96<br>
+                        Como |Z| = 1,137 &lt; 1,96, não rejeitamos H₀.
+                    </span>
+                    <strong>Conclusão:</strong> Com 5% de significância, não há evidência estatística suficiente para afirmar que a proporção de profissionais que apoiam a substituição das linguagens tradicionais difere de 45%. Ou seja, os dados da amostra não contradizem a pesquisa original.
+                    <div class="grafico">Gráfico 32 - Teste de Proporção</div>
+                    <img src="../image/image-aulas/Teste de Proporção-aula13.png" alt="">
+                </li>
+                <li>
+                    O custo X de manutenção mensal de servidores de um data center segue uma distribuição normal, X∼N(μ,400). Durante muito tempo, o valor médio μ tem sido considerado igual a 200. No entanto, há uma suspeita de que esse valor aumentou, e só nos interessa saber se o novo valor é superior a 210.<br>
+                    Desejamos planejar um teste com:<br>
+                    Nível de significância: α=5% quando μ=200<br>
+                    Erro tipo II desejado: β=10% quando μ=210
+                    <ol type="a">
+                        <li>
+                            <strong>Determinar o tamanho da amostra n</strong><br>
+                            Fórmula para teste unilateral com variância conhecida:<br>
+                            n = [(Z<sub>α</sub> + Z<sub>β</sub>) × σ / (μ₁ - μ₀)]²<br>
+                            σ² = 400 → σ = √400 = 20<br>
+                            μ₀ = 200<br>
+                            μ₁ = 210<br>
+                            Z<sub>α</sub> ≅ 1,645 (à direita)<br>
+                            Z<sub>β</sub> ≅ 1,28<br>
+                            n = [(1,645 + 1,28) × 20 / (210 - 200)]²<br>
+                            n = [2,925 × 20 / 10]² = [5,85]² ≅ 34,22<br>
+                            <strong>Conclusão:</strong> O tamanho mínimo da amostra é 35 servidores (arredondando para cima, pois o tamanho da amostra deve ser inteiro).
+                        </li>
+                        <li>
+                            <strong>Determinar a região crítica (RC)</strong><br>
+                            H₀: μ = 200<br>
+                            H₁: μ &gt; 210 (à direita)<br>
+                            A região crítica é definida para valores da média amostral X̄ que levam à rejeição de H₀.<br>
+                            Estatística do teste:<br>
+                            Z = (X̄ - μ) / (σ/√n)<br>
+                            X̄ = 200 + 1,645 × 20/√35 ≅ 205,56<br>
+                            <strong>Conclusão:</strong> Região crítica: rejeitar H₀ se X̄ &gt; 205,56.
+                        </li>
+                    </ol>
+                    <div class="grafico">Gráfico 33 - Teste de Média</div>
+                    <img src="../image/image-aulas/Teste de Média-aula13.png" alt="">
+                </li>
+            </ol>
+            <div class="curiosidades">
+                <h3>CURIOSIDADES:</h3>
+                <p>
+                    A aspirina só foi liberada graças aos testes de hipótese!<br>
+                    O medicamento foi testado com grupos de pessoas em estudos clínicos usando o famoso “teste de hipótese nula” para verificar se o efeito era realmente estatisticamente significativo e não apenas sorte. Hoje, praticamente toda pesquisa médica usa essa técnica para aprovar ou descartar tratamentos.
+                </p>
+            </div>
+        </section>
+    </main>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode')
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>

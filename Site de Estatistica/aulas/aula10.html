@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10: Distribuição Normal: Tabela da Variável “Z”</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .doc-section {
+            background: #16243a;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.08);
+            padding: 2rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 850px;
+            color: #f7faff;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+        .doc-section h1, .doc-section h2, .doc-section h3 {
+            color: #2ecc71;
+            font-weight: 800;
+            margin-top: 1.5rem;
+        }
+        .doc-section h1 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+        }
+        .doc-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+        .doc-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-section ul {
+            margin: 0.7rem 0 1.2rem 1.5rem;
+        }
+        .doc-section li {
+            margin-bottom: 0.5rem;
+        }
+        .doc-section .curiosidades {
+            background: #1e90ff22;
+            border-left: 5px solid #2ecc71;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+        .doc-section .figura, .doc-section .grafico, .doc-section .formula {
+            background: #22314a;
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            margin: 1.2rem 0;
+            color: #b3c6e0;
+            font-size: 0.98rem;
+            font-style: italic;
+        }
+        @media (max-width: 700px) {
+            .doc-section {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='../index.html'">
+            <img src="../image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="../creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aula8.html">AULA 8: Infográficos e Acrósticos</a>
+                    <a href="aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="../sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+       
+    </header>
+    <main>
+        <section class="doc-section">
+            <h1>AULA 10: Distribuição Normal: Tabela da Variável “Z”</h1>
+            <h2>Distribuição Normal Padrão</h2>
+            <p>
+                A Distribuição Normal Padrão é uma distribuição de probabilidade contínua com média (μ) igual a 0 e desvio padrão (σ) igual a 1. É representada por N(0,1) e possui uma curva simétrica em forma de sino.
+            </p>
+            <p>
+                Essa distribuição é fundamental em estatística, pois muitos fenômenos naturais e sociais seguem esse padrão. A área total sob a curva é igual a 1, representando 100% da probabilidade.
+            </p>
+            <h3>Tabela de Distribuição Normal Padronizada</h3>
+            <p>
+                A Tabela de Distribuição Normal Padronizada, também conhecida como Tabela Z, fornece as áreas acumuladas sob a curva normal padrão para diferentes valores de z (escores Z). Essas tabelas são essenciais para calcular probabilidades associadas a valores específicos em distribuições normais.
+            </p>
+            <p>
+                Por exemplo, para encontrar a probabilidade de um valor ser menor que z = 1,26, consultamos a tabela, que nos dá a área correspondente.
+            </p>
+            <h3>Distribuição Normal Padrão Acumulada e Reduzida</h3>
+            <ul>
+                <li>
+                    <strong>Distribuição Normal Padrão Acumulada:</strong> refere-se à função de distribuição acumulada (CDF) da normal padrão, que calcula a probabilidade de uma variável aleatória ser menor ou igual a um valor específico. Matematicamente, é expressa como:
+                    <span class="formula">
+                        F(z) = P(Z ≤ z) = (1 / √2π) ∫<sub>-∞</sub><sup>z</sup> e<sup>-t²/2</sup> dt
+                    </span>
+                </li>
+                <li>
+                    <strong>Distribuição Normal Padrão Reduzida:</strong> envolve a padronização de uma variável aleatória X, transformando-a em Z utilizando a fórmula:
+                    <span class="formula">
+                        Z = (X - μ) / σ
+                    </span>
+                    Essa transformação permite comparar diferentes distribuições normais, convertendo-as para a distribuição normal padrão.
+                </li>
+            </ul>
+            <h3>Área sob a Curva Normal Padrão</h3>
+            <p>
+                A Área sob a Curva Normal Padrão representa a probabilidade acumulada até um determinado valor de z. Por exemplo, a área até z = 1,26 é 0,8962, indicando que há 89,62% de chance de uma variável aleatória da normal padrão ser menor que 1,26.
+            </p>
+            <div class="figura">
+                Figura 20 - Exemplo de Área sob a Curva Normal Padrão<br>
+                <img src="../image/image-aulas/Exemplo de Área sob a Curva Normal Padrão-aula10.png" alt="">
+                Fonte: Moodle UFSC, 2025.
+            </div>
+            <h3>EXERCÍCIOS:</h3>
+            <p><strong>Considerando:</strong><br>
+            Média = 49,625 minutos<br>
+            Desvio Padrão = 26,359 minutos</p>
+            <ol>
+                <li>
+                    P(x = Me) → P(x = 49,625) ↔ P(Z = 0)<br>
+                    <span class="formula">
+                        Z = (49,625 - 49,625) / 26,359 = 0<br>
+                        P(Z = 0) = 0,00
+                    </span>
+                    <div class="grafico">Gráfico 10 - Probabilidade para Z = 0</div>
+                    <img src="../image/image-aulas/Probabilidade para Z = 0 -aula10.png" alt="">
+                </li>
+                <li>
+                    P(x = Me) → P(x = 49,625) ↔ P(Z = 0)<br>
+                    <span class="formula">
+                        Z = (49,625 - 49,625) / 26,359 = 0<br>
+                        P(Z = 0) = 0,00<br>
+                        P(Z > 0) = 0,5 = 50%
+                    </span>
+                    <div class="grafico">Gráfico 11 - Probabilidade para Z &gt; 0</div>
+                    <img src="../image/image-aulas/Probabilidade para Z  0-aula10.png" alt="">
+                </li>
+                <li>
+                    P(x = Me) → P(x = 49,625) ↔ P(Z = 0)<br>
+                    <span class="formula">
+                        Z = (49,625 - 49,625) / 26,359 = 0<br>
+                        P(Z = 0) = 0,00<br>
+                        P(Z &lt; 0) = 0,5 = 50%
+                    </span>
+                    <div class="grafico">Gráfico 12 - Probabilidade para Z &lt; 0</div>
+                    <img src="../image/image-aulas/Probabilidade para Z  0Probabilidade para Z  0-aula111.1.png" alt="">
+                </li>
+                <li>
+                    P(x = S) → P(x = 26,359) ↔ P(Z = -0,88)<br>
+                    <span class="formula">
+                        Z = (26,359 - 49,625) / 26,359 = -0,88<br>
+                        P(Z = -0,88) = 0,3106<br>
+                        P(Z &gt; -0,88) = 0,5 + 0,3106 = 81,06%
+                    </span>
+                    <div class="grafico">Gráfico 13 - Probabilidade para Z &gt; -0,88</div>
+                    <img src="../image/image-aulas/Probabilidade para Z  -0,88-aula10.png" alt="">
+                </li>
+                <li>
+                    P(x = S) → P(x = 26,359) ↔ P(Z = -0,88)<br>
+                    <span class="formula">
+                        Z = (26,359 - 49,625) / 26,359 = -0,88<br>
+                        P(Z = -0,88) = 0,3106<br>
+                        P(Z &lt; -0,88) = 1 - 0,8106 = 18,94%
+                    </span>
+                    <div class="grafico">Gráfico 14 - Probabilidade para Z &lt; -0,88</div>
+                    <img src="../image/image-aulas/Probabilidade para Z  -0,88-aula10.1.png" alt="">
+                </li>
+                <li>
+                    P(x = Me + S) → P(x = 75,984) ↔ P(Z = 1)<br>
+                    <span class="formula">
+                        Z = (75,984 - 49,625) / 26,359 = 1<br>
+                        P(Z = 1) = 0,3413<br>
+                        P(Z &gt; 1) = 0,5 - 0,3413 = 15,87%
+                    </span>
+                    <div class="grafico">Gráfico 15 - Probabilidade para Z &gt; 1</div>
+                    <img src="../image/image-aulas/z maior que 1.png" alt="">
+                </li>
+                <li>
+                    P(x = Me + S) → P(x = 75,984) ↔ P(Z = 1)<br>
+                    <span class="formula">
+                        Z = (75,984 - 49,625) / 26,359 = 1<br>
+                        P(Z = 1) = 0,3413<br>
+                        P(Z &lt; 1) = 0,5 + 0,3413 = 84,13%
+                    </span>
+                    <div class="grafico">Gráfico 16 - Probabilidade para Z &lt; 1</div>
+                    <img src="../image/image-aulas/z menor que 1.png" alt="">
+                </li>
+                <li>
+                    P(x = Me - S) → P(x = 23,266) ↔ P(Z = -1)<br>
+                    <span class="formula">
+                        Z = (23,266 - 49,625) / 26,359 = -1<br>
+                        P(Z = -1) = 0,3413<br>
+                        P(Z &gt; -1) = 0,5 + 0,3413 = 84,13%
+                    </span>
+                    <div class="grafico">Gráfico 17 - Probabilidade para Z &gt; -1</div>
+                    <img src="../image/image-aulas/z maior que menos 1.png" alt="">
+                </li>
+                <li>
+                    P(x = Me - S) → P(x = 23,266) ↔ P(Z = -1)<br>
+                    <span class="formula">
+                        Z = (23,266 - 49,625) / 26,359 = -1<br>
+                        P(Z = -1) = 0,3413<br>
+                        P(Z &lt; -1) = 1 - 0,8413 = 15,87%
+                    </span>
+                    <div class="grafico">Gráfico 18 - Probabilidade para Z &lt; -1</div>
+                    <img src="../image/image-aulas/z menor que menos 1.png" alt="">
+                </li>
+            </ol>
+            <div class="curiosidades">
+                <h3>CURIOSIDADES:</h3>
+                <div class="figura">
+                    Figura 21 - Tabela de Distribuição Normal Reduzida
+                    <img src="../image/image-aulas/tabela-aula10.png" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode')
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>

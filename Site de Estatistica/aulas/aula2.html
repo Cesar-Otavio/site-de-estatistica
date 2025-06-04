@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 2: Tabela de Distribuição de Frequência – TDF</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .doc-section {
+            background: #16243a;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.08);
+            padding: 2rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 850px;
+            color: #f7faff;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+        .doc-section h1, .doc-section h2, .doc-section h3 {
+            color: #2ecc71;
+            font-weight: 800;
+            margin-top: 1.5rem;
+        }
+        .doc-section h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .doc-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+        .doc-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-section ul {
+            margin: 0.7rem 0 1.2rem 1.5rem;
+        }
+        .doc-section li {
+            margin-bottom: 0.5rem;
+        }
+        .doc-section .curiosidades {
+            background: #1e90ff22;
+            border-left: 5px solid #2ecc71;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+        .doc-section .tabela, .doc-section .formula {
+            background: #22314a;
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            margin: 1.2rem 0;
+            color: #b3c6e0;
+            font-size: 0.98rem;
+            font-style: italic;
+        }
+        @media (max-width: 700px) {
+            .doc-section {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='../index.html'">
+            <img src="../image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="../creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="../sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+       
+    </header>
+    <main>
+        <section class="doc-section">
+            <h1>AULA 2: Tabela de Distribuição de Frequência – TDF</h1>
+            <h2>Frequência</h2>
+            <p>
+                Refere-se ao número de vezes que um determinado valor ou categoria aparece em um conjunto de dados.
+            </p>
+            <ul>
+                <li>
+                    <strong>Frequência Absoluta ou Frequência Simples:</strong> É a contagem total de ocorrências de um determinado valor ou categoria em um conjunto de dados.<br>
+                    <em>Exemplo:</em> Se em uma lista de notas de alunos, a nota 7 aparece 5 vezes, a frequência absoluta da nota 7 é 5.
+                </li>
+                <li>
+                    <strong>Frequência Relativa:</strong> É a proporção da frequência absoluta em relação ao total de observações. É calculada pela fórmula:<br>
+                    <span class="formula">Frequência relativa = frequência absoluta / total de observações</span>
+                    <em>Exemplo:</em> Se a frequência absoluta da nota 7 é 5 e o total de notas é 20, a frequência relativa de nota 7 seria 5/20 = 0,25 ou 25%.
+                </li>
+                <li>
+                    <strong>Frequência Acumulada:</strong> Representa a soma das frequências absolutas até um certo ponto na tabela. Ela mostra quantas observações estão abaixo ou iguais a determinado valor. Para calcular, é só somar as frequências absolutas sucessivamente.
+                </li>
+            </ul>
+            <h2>Porcentagem</h2>
+            <p>
+                A porcentagem é uma forma de expressar uma fração com base em 100. Para calcular a porcentagem da frequência relativa, multiplica-se por 100:
+            </p>
+            <span class="formula">Porcentagem = frequência relativa × 100</span>
+            <h2>Grau</h2>
+            <p>
+                Em algumas situações, especialmente em gráficos circulares (pizza), os dados podem ser representados em graus. A soma total do círculo é 360 graus. Para calcular quantos graus corresponde à frequência relativa de uma categoria, usa-se:
+            </p>
+            <span class="formula">Grau = frequência relativa × 360</span>
+            <p>
+                No exemplo da nota 7 com frequência relativa de 0,25, o cálculo seria: 0,25 × 360 = 90°.
+            </p>
+            <h3>EXERCÍCIO:</h3>
+            <p>
+                Construir e completar a Tabela de Distribuição de Frequência (TDF) para variáveis qualitativas e quantitativas.
+            </p>
+            <div class="tabela">
+                <strong>Tabela 1 - Tabela variável qualitativa</strong><br>
+                <img src="../image/image-aulas/Tabela 1 - Tabela variável qualitativa-aula2.png" alt="">
+                <em>(Exemplo de tabela para variáveis qualitativas)</em>
+            </div>
+            <div class="tabela">
+                <strong>Tabela 2 - Tabela variável quantitativa</strong><br>
+                <img src="../image/image-aulas/Tabela 2 - Tabela variável quantitativa-aula2.png" alt="">
+                <em>(Exemplo de tabela para variáveis quantitativas)</em>
+            </div>
+            <span class="formula">k = 1 + 3,322 log n<br>
+            Exemplo: log 440 ≅ 2,643 → k = 1 + 3,322 × 2,643 ≅ 9,781 ≅ 10 linhas</span>
+            <div class="curiosidades">
+                <h3>CURIOSIDADES:</h3>
+                <strong>Estatística no Futebol</strong>
+                <ol>
+                    <li>
+                        <strong>Análise e desempenho dos jogadores:</strong> As estatísticas são essenciais para avaliar o desempenho individual dos jogadores. Algumas métricas comuns incluem:
+                        <ul>
+                            <li>Gols e assistências;</li>
+                            <li>Passes completos;</li>
+                            <li>Dribles e faltas.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Análise Tática:</strong> As estatísticas também são usadas para analisar táticas de equipe. Por exemplo:
+                        <ul>
+                            <li>Posse de bola;</li>
+                            <li>Distribuição de passes;</li>
+                            <li>Distribuição espacial (mapas de calor).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Avaliação de equipes:</strong> além das análises individuais, as estatísticas também permitem avaliar o desempenho geral das equipes:
+                        <ul>
+                            <li>Resultados em Casa vs. Fora;</li>
+                            <li>Média de gols marcados e sofridos;</li>
+                            <li>Ranking estatístico.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Modelagem Preditiva:</strong> Com o aumento da análise de dados, muitos clubes começam a usar modelagem preditiva para antecipar resultados:
+                        <ul>
+                            <li>Simulações estatísticas: modelos que utilizam dados históricos para prever resultados futuros ajudam os clubes a fazer melhores escolhas em termos de escalação, táticas e estratégias durante as partidas.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </main>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode')
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>

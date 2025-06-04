@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 14: Correlação e Regressão Linear</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .doc-section {
+            background: #16243a;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.08);
+            padding: 2rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 850px;
+            color: #f7faff;
+            font-size: 1.08rem;
+            line-height: 1.7;
+        }
+        .doc-section h1, .doc-section h2, .doc-section h3 {
+            color: #2ecc71;
+            font-weight: 800;
+            margin-top: 1.5rem;
+        }
+        .doc-section h1 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+        }
+        .doc-section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+        }
+        .doc-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-section ul {
+            margin: 0.7rem 0 1.2rem 1.5rem;
+        }
+        .doc-section li {
+            margin-bottom: 0.5rem;
+        }
+        .doc-section .curiosidades {
+            background: #1e90ff22;
+            border-left: 5px solid #2ecc71;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+        .doc-section .figura, .doc-section .grafico, .doc-section .formula {
+            background: #22314a;
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            margin: 1.2rem 0;
+            color: #b3c6e0;
+            font-size: 0.98rem;
+            font-style: italic;
+        }
+        @media (max-width: 700px) {
+            .doc-section {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='../index.html'">
+            <img src="../image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="../creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aula8.html">AULA 8: Infográficos e Acrósticos</a>
+                    <a href="aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="../sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+        
+    </header>
+    <main>
+        <section class="doc-section">
+            <h1>AULA 14: Correlação e Regressão Linear</h1>
+            <h2>Correlação Linear</h2>
+            <p>
+                A correlação linear é uma medida estatística que quantifica a força e a direção da relação linear entre duas variáveis. Ela indica se as variáveis tendem a aumentar ou diminuir juntas (correlação positiva), ou se uma aumenta enquanto a outra diminui (correlação negativa), e a intensidade dessa relação. O coeficiente de correlação de Pearson é uma das medidas mais comuns para avaliar a correlação linear, variando de -1 a +1, com 0 indicando ausência de correlação linear.
+            </p>
+            <ul>
+                <li><strong>Correlação Linear:</strong> Uma relação entre duas variáveis que pode ser representada por uma linha reta.</li>
+                <li><strong>Direção:</strong> Pode ser positiva (as variáveis variam no mesmo sentido) ou negativa (as variáveis variam em sentidos opostos).</li>
+                <li><strong>Força:</strong> Medida pela proximidade do coeficiente de correlação com +1 ou -1 (forte) ou 0 (fraca).</li>
+                <li><strong>Coeficiente de Correlação de Pearson:</strong> A medida mais comum para avaliar a correlação linear, com valores entre -1 e +1.</li>
+            </ul>
+            <h3>Detalhamento</h3>
+            <ul>
+                <li><strong>Correlação Positiva:</strong> Quando uma variável aumenta, a outra também tende a aumentar. Exemplo: altura e peso de um indivíduo.</li>
+                <li><strong>Correlação Negativa:</strong> Quando uma variável aumenta, a outra tende a diminuir. Exemplo: idade e número de cabelos.</li>
+                <li><strong>Correlação Zero:</strong> Não há relação linear entre as variáveis. Os pontos em um gráfico de dispersão não tendem a se alinhar em uma linha reta.</li>
+                <li><strong>Coeficiente de Correlação de Pearson:</strong> Quantifica a força e a direção da relação linear entre duas variáveis.</li>
+            </ul>
+            <div class="formula">
+                <strong>Valores:</strong><br>
+                +1: Correlação linear perfeita e positiva.<br>
+                -1: Correlação linear perfeita e negativa.<br>
+                0: Ausência de correlação linear.
+            </div>
+            <p>
+                <strong>Interpretação:</strong><br>
+                Quanto mais próximo de +1 ou -1, mais forte a correlação linear.<br>
+                Quanto mais próximo de 0, mais fraca a correlação linear.
+            </p>
+            <div class="formula">
+                <strong>Notação Fórmula:</strong><br>
+                r = [n∑xi yi - ∑xi ∑yi] / sqrt{[n∑xi² - (∑xi)²][n∑yi² - (∑yi)²]}
+            </div>
+            <h2>Regressão Linear</h2>
+            <p>
+                Regressão Linear é uma técnica estatística usada para modelar a relação entre uma variável dependente (resposta) e uma ou mais variáveis independentes (preditoras). O objetivo é encontrar uma equação que melhore a previsão ou explicação do comportamento da variável dependente com base nas variáveis independentes.
+            </p>
+            <h3>Tipos de Regressão Linear</h3>
+            <ul>
+                <li>
+                    <strong>Regressão Linear Simples:</strong> Usa uma variável independente para prever uma variável dependente.<br>
+                    <span class="formula">y = a + bx</span>
+                    <br>
+                    Onde:<br>
+                    y: variável dependente<br>
+                    x: variável independente<br>
+                    a: intercepto (valor de y quando x=0)<br>
+                    b: coeficiente angular (inclinação da reta)
+                </li>
+                <li>
+                    <strong>Regressão Linear Múltipla:</strong> Usa duas ou mais variáveis independentes.<br>
+                    <span class="formula">y = a + b₁x₁ + b₂x₂ + ... + bₙxₙ</span>
+                    <br>
+                    Cada b representa o impacto da variável x sobre y.
+                </li>
+            </ul>
+            <h3>Objetivo</h3>
+            <p>
+                Encontrar os coeficientes que minimizam o erro entre os valores previstos e os valores reais, geralmente usando o método dos mínimos quadrados.
+            </p>
+            <h3>Métricas Comuns</h3>
+            <ul>
+                <li>
+                    <strong>Erro Quadrático Médio (MSE):</strong> Mede o erro médio ao quadrado entre os valores previstos e os reais. Quanto menor, melhor o modelo.
+                </li>
+                <li>
+                    <strong>R² (Coeficiente de Determinação):</strong> Mede quanta variabilidade da variável dependente é explicada pelo modelo (varia de 0 a 1).
+                </li>
+            </ul>
+            <div class="figura">
+                <strong>Exemplo:</strong><br>
+                Figura 26 - Exemplo de Gráfico de Dispersão<br>
+                <img src="../image/image-aulas/Exemplo de Gráfico de Dispersão-aula14.png" alt="">
+                Fonte: Medium, 2025.
+            </div>
+            <h2>Diagrama de Dispersão</h2>
+            <p>
+                Um Diagrama de Dispersão (ou Scatter Plot) é uma representação gráfica usada para visualizar a relação entre duas variáveis numéricas.
+            </p>
+            <ul>
+                <li><strong>Eixo X:</strong> representa a variável independente (ex: horas de estudo).</li>
+                <li><strong>Eixo Y:</strong> representa a variável dependente (ex: nota do aluno).</li>
+                <li><strong>Pontos:</strong> cada ponto representa uma observação (um par de valores x e y).</li>
+            </ul>
+            <h3>Finalidade</h3>
+            <ul>
+                <li>Visualizar tendências ou padrões (como correlações).</li>
+                <li>Identificar possíveis relações lineares ou não lineares.</li>
+                <li>Detectar outliers (valores fora do padrão).</li>
+                <li>Auxiliar na análise de regressão linear.</li>
+            </ul>
+            <h3>Correlação Visual</h3>
+            <table class="figura">
+                <tr>
+                    <th>Tipo de Padrão</th>
+                    <th>Interpretação</th>
+                </tr>
+                <tr>
+                    <td>Pontos sobem →</td>
+                    <td>Correlação positiva</td>
+                </tr>
+                <tr>
+                    <td>Pontos descem →</td>
+                    <td>Correlação negativa</td>
+                </tr>
+                <tr>
+                    <td>Pontos espalhados →</td>
+                    <td>Sem correlação clara</td>
+                </tr>
+            </table>
+            <h3>Ligação com a Regressão Linear</h3>
+            <p>
+                Ao traçar uma linha de tendência (reta de regressão) sobre o diagrama de dispersão, você pode ver como a regressão se ajusta aos dados:
+            </p>
+            <span class="formula">y = a + bx</span>
+            <p>
+                Essa linha minimiza a distância quadrada entre ela e todos os pontos do gráfico.
+            </p>
+            <h3>EXERCÍCIOS:</h3>
+            <ol>
+                <li>
+                    Durante todo o mês de julho de 2018, a Sociedade Empresária Alfa realizou pesquisa diária visando medir a força relativa da relação linear entre o número de acessos ao seu site na Internet e o volume de vendas (em R$) de seu Produto “A”. Sabe-se que os dados amostrais obtidos para os quatro primeiros dias de pesquisa foram:<br>
+                    <img src="../image/image-aulas/Tabela para Ex1 Correlação Linear-aula14.png" alt="">
+                    <span class="figura">Tabela 8 - Tabela para Ex1 Correlação Linear</span>
+                    <br>
+                    Com base nesses dados, calcule o coeficiente de correlação linear de Pearson (r) entre o número de acessos ao site e o volume de vendas do Produto “A” nos quatro primeiros dias da pesquisa.
+                    <span class="formula">
+                        Tabela auxiliar:<br>
+                        Tabela 9 - Tabela Auxiliar Ex1<br>
+                        <img src="../image/image-aulas/Tabela Auxiliar Ex1-aula14.png" alt="">
+                        n = 4<br>
+                        r = [4 × 660 - 36 × 72] / sqrt{[4 × 330 - 36²] × [4 × 1320 - 72²]}<br>
+                        r = (2640 - 2592) / sqrt{5280 × 5184}<br>
+                        r = 48 / sqrt{27371520}<br>
+                        r = 48 / 5232 ≈ 1
+                    </span>
+                    <strong>Conclusão:</strong> O coeficiente de correlação é 1, ou seja, uma correlação linear perfeita.
+                    <div class="grafico">Gráfico 34 - Gráfico de Dispersão Ex1</div>
+                    <img src="../image/image-aulas/Gráfico de Dispersão Ex1-aula14.png" alt="">
+                </li>
+                <li>
+                    A tabela abaixo mostra o tempo médio de resposta de um servidor em diferentes horários do dia:<br>
+                    <span class="figura">Tabela 10 - Tabela para Ex2 Correlação Linear</span>
+                    <br>
+                    <img src="../image/image-aulas/Tabela para Ex2 Correlação Linear-aula14.png" alt="">
+                    Verifique se há uma correlação linear entre o horário de acesso e o tempo médio de resposta do servidor.
+                    <span class="formula">
+                        Tabela auxiliar:<br>
+                        Tabela 11 - Tabela Auxiliar Ex2<br>
+                        <img src="../image/image-aulas/Tabela Auxiliar Ex2-aula14.png" alt="">
+                        n = 8<br>
+                        r = [8 × 6344 - 72 × 746] / sqrt{[8 × 816 - 72²] × [8 × 70420 - 746²]}<br>
+                        r = (50752 - 53712) / sqrt{1344 × 6844}<br>
+                        r = -2960 / sqrt{9198336}<br>
+                        r = -2960 / 3032.51 ≈ -0,976
+                    </span>
+                    <strong>Conclusão:</strong> Isso indica uma forte correlação negativa: conforme o horário avança, o tempo médio de resposta do servidor tende a diminuir.
+                    <div class="grafico">Gráfico 35 – Gráfico de Dispersão Ex2</div>
+                    <img src="../image/image-aulas/Gráfico de Dispersão Ex2-aula14.png" alt="">
+                </li>
+            </ol>
+            <div class="curiosidades">
+                <h3>CURIOSIDADES:</h3>
+                <p>
+                    Correlação não implica causalidade – e isso já causou muita confusão!<br>
+                    Um site chamado Spurious Correlations mostra exemplos engraçados como: o consumo de queijo per capita nos EUA correlacionado com mortes por emaranhamento em lençóis. A relação existe nos números, mas obviamente não há uma ligação causal real. Isso mostra a importância de interpretar a estatística com cuidado.<br>
+                    Link do site mencionado: <a href="https://www.tylervigen.com/spurious-correlations" target="_blank">https://www.tylervigen.com/spurious-correlations</a>
+                </p>
+            </div>
+        </section>
+    </main>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode')
+                ? '<i class="fa-solid fa-sun"></i>'
+                : '<i class="fa-solid fa-moon"></i>';
+        });
+    </script>
+</body>
+</html>

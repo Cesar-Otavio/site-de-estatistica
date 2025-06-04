@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Estatística</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: #101b2a;
+            color: #f7faff;
+            font-family: 'Nunito', Arial, Helvetica, sans-serif;
+        }
+        body.light-mode {
+            background: #f7faff;
+            color: #1a2233;
+        }
+        body.light-mode .logo span {
+            color: #1a2233 !important;
+        }
+        body.light-mode .sobre-header h1 {
+            color: #1e90ff;
+        }
+        body.light-mode .sobre-header .subtitle {
+            color: #3a4a6a;
+        }
+        body.light-mode .sobre-tabs {
+            background: transparent;
+        }
+        body.light-mode .sobre-tab {
+            background: #f0f4fa;
+            color: #3a4a6a;
+        }
+        body.light-mode .sobre-tab.active, 
+        body.light-mode .sobre-tab:focus {
+            background: #1e90ff;
+            color: #fff;
+        }
+        body.light-mode .sobre-content {
+            background: #fff;
+            color: #1a2233;
+            box-shadow: 0 4px 24px 0 rgba(30, 144, 255, 0.08);
+        }
+        body.light-mode .marcos-historicos {
+            background: #1e90ff22;
+            border-left: 5px solid #1e90ff;
+        }
+        body.light-mode .marcos-historicos h3 {
+            color: #1e90ff;
+        }
+        body.light-mode .marcos-historicos ul {
+            color: #1a2233;
+        }
+        body.light-mode .sobre-card {
+            background: #f0f4fa;
+            color: #1a2233;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.05);
+        }
+        body.light-mode .sobre-card i {
+            color: #1e90ff;
+        }
+        body.light-mode .sobre-card h4 {
+            color: #1e90ff;
+        }
+        body.light-mode .sobre-card p {
+            color: #1a2233;
+        }
+        body.light-mode .area h5 {
+            color: #1e90ff;
+        }
+        body.light-mode .area ul {
+            color: #1a2233;
+        }
+        .sobre-header {
+            text-align: center;
+            margin-top: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .sobre-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2ecc71;
+            margin-bottom: 0.7rem;
+            letter-spacing: 1px;
+        }
+        .sobre-header .subtitle {
+            font-size: 1.18rem;
+            color: #b3c6e0;
+            font-weight: 500;
+        }
+        .sobre-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .sobre-tab {
+            background: #16243a;
+            color: #b3c6e0;
+            border: none;
+            border-radius: 16px 16px 0 0;
+            padding: 0.9rem 2.2rem;
+            font-size: 1.08rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            outline: none;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .sobre-tab.active, .sobre-tab:focus {
+            background: #2ecc71; /* verde */
+            color: #fff;
+        }
+        .sobre-content {
+            max-width: 900px;
+            margin: 0 auto 3rem auto;
+            background: #16243a;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 4px 24px 0 rgba(30, 144, 255, 0.10);
+            padding: 2.5rem 2rem 2rem 2rem;
+            min-height: 320px;
+            animation: fadeInTab 0.5s;
+        }
+        @keyframes fadeInTab {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .marcos-historicos {
+            background: #1e90ff22;
+            border-left: 5px solid #2ecc71;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+        .marcos-historicos h3 {
+            color: #2ecc71;
+            font-size: 1.08rem;
+            margin-bottom: 0.7rem;
+            font-weight: 700;
+        }
+        .marcos-historicos ul {
+            margin: 0;
+            padding-left: 1.2rem;
+            color: #f7faff;
+            font-size: 1.01rem;
+        }
+        .sobre-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0 1.5rem 0;
+            justify-content: center;
+        }
+        .sobre-card {
+            background: #22314a;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px 0 rgba(30,144,255,0.08);
+            padding: 1.5rem 1.3rem;
+            min-width: 220px;
+            max-width: 270px;
+            flex: 1 1 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.7rem;
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+        .sobre-card i {
+            color: #2ecc71;
+            font-size: 1.5rem;
+        }
+        .sobre-card h4 {
+            color: #1e90ff;
+            font-size: 1.08rem;
+            font-weight: 700;
+            margin: 0 0 0.3rem 0;
+        }
+        .sobre-card p {
+            color: #f7faff;
+            font-size: 0.98rem;
+            margin: 0;
+        }
+        .areas-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.2rem;
+            margin: 2rem 0 1.5rem 0;
+            justify-content: flex-start;
+        }
+        .area {
+            min-width: 210px;
+            max-width: 300px;
+            flex: 1 1 210px;
+            margin-bottom: 1.2rem;
+        }
+        .area h5 {
+            color: #2ecc71;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .area ul {
+            margin: 0;
+            padding-left: 1.1rem;
+            color: #f7faff;
+            font-size: 0.97rem;
+        }
+        @media (max-width: 900px) {
+            .sobre-content {
+                padding: 1.2rem 0.7rem;
+            }
+            .sobre-cards, .areas-list {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .sobre-header h1 {
+                font-size: 1.4rem;
+            }
+            .sobre-content {
+                padding: 0.7rem 0.2rem;
+            }
+            .sobre-card {
+                min-width: 0;
+                max-width: 100vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" style="cursor:pointer;" onclick="window.location.href='index.html'">
+            <img src="image/logo.png" alt="Logo Estatística" style="height: 38px; vertical-align: middle; margin-right: 10px;">
+            <span>Estatística</span>
+        </div>
+        <nav class="nav">
+            <a href="creditos.html">Créditos</a>
+            <div class="dropdown" id="aulasDropdown">
+                <button class="dropdown-btn" aria-haspopup="true" aria-expanded="false" id="dropdownBtn">
+                    Aulas <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent" role="menu" aria-label="Lista de Aulas">
+                    <a href="aulas/aula1.html">AULA 1: População, Amostra, Variável Quantitativa E Qualitativa</a>
+                    <a href="aulas/aula2.html">AULA 2: Tabela de Distribuição de Frequência – TDF</a>
+                    <a href="aulas/aula3.html">AULA 3: Gráficos Estatísticos </a>
+                    <a href="aulas/aula4.html">AULA 4: Medidas de Tendência Central</a>
+                    <a href="aulas/aula5.html">AULA 5: Separatrizes: Quartil, Quintil, Decil e Percentil</a>
+                    <a href="aulas/aula6.html">AULA 6: Medidas de Dispersão ou Variabilidade</a>
+                    <a href="aulas/aula7.html">AULA 7: Coeficientes Estatísticos: Assimetria e Curtose</a>
+                    <a href="aulas/aula9.html">AULA 9: Probabilidades: Distribuição Binomial e Poisson</a>
+                    <a href="aulas/aula10.html">AULA 10: Distribuição Normal: Tabela da Variável “Z”</a>
+                    <a href="aulas/aula11.html">AULA 11: Estimativa: Intervalo de Confiança da Média</a>
+                    <a href="aulas/aula12.html">AULA 12: Modelos de Distribuição: STUDENT e QUI-QUADRADO</a>
+                    <a href="aulas/aula13.html">AULA 13: Testes e Hipóteses</a>
+                    <a href="aulas/aula14.html">AULA 14: Correlação e Regressão Linear</a>
+                </div>
+            </div>
+            <a href="sobreEstatistica.html">Sobre Estatística</a>
+        </nav>
+        
+    </header>
+
+    <main>
+        <div class="sobre-header">
+            <h1>📊 Sobre Estatística</h1>
+            <div class="subtitle">Conheça a história, importância e aplicações desta ciência fundamental</div>
+        </div>
+        <div class="sobre-tabs" role="tablist">
+            <button class="sobre-tab active" id="tab-historia" role="tab" aria-selected="true"><i class="fa-solid fa-landmark"></i> Origem e História</button>
+            <button class="sobre-tab" id="tab-importancia" role="tab" aria-selected="false"><i class="fa-solid fa-star"></i> Importância</button>
+            <button class="sobre-tab" id="tab-aplicacoes" role="tab" aria-selected="false"><i class="fa-solid fa-cubes"></i> Aplicações</button>
+            <button class="sobre-tab" id="tab-curiosidades" role="tab" aria-selected="false"><i class="fa-solid fa-lightbulb"></i> Curiosidades</button>
+        </div>
+        <section class="sobre-content" id="tab-content">
+            <!-- Conteúdo das abas será trocado via JS -->
+        </section>
+    </main>
+    <script>
+        // Conteúdo das abas
+        const tabContent = document.getElementById('tab-content');
+        const tabs = document.querySelectorAll('.sobre-tab');
+
+        const conteudos = [
+            // Origem e História
+
+            `
+            <h1>Origem e História da Estatística</h1>
+            
+            <p>
+                A palavra <strong>"estatística"</strong> deriva do latim statisticum, relacionada à ciência do estado, pois inicialmente estava ligada à coleta de dados para governos.
+            </p>
+
+            <p>
+                As raízes da estatística remontam às antigas civilizações. Os babilônios e egípcios já coletavam dados sobre população e riquezas por volta de 3000 a.C.
+            </p>
+            <div class="marcos-historicos">
+                <h3>Marcos Históricos</h3>
+                <ul>
+                    <li><strong>Século XVII:</strong> John Graunt inicia estudos sistemáticos com tabelas de mortalidade.</li>
+                    <li><strong>Século XVIII:</strong> Desenvolvimentos da teoria de probabilidade por Laplace e Gauss.</li>
+                    <li><strong>Século XIX:</strong> Francis Galton e Karl Pearson estabelecem bases da estatística moderna.</li>
+                    <li><strong>Século XX:</strong>  Ronald Fisher revoluciona a estatística com métodos de desenho experimental.</li>
+                </ul>
+            </div>
+            <p>
+                    No início, a estatística era principalmente descritiva, focada em coleta e apresentação de dados. Evoluiu para incluir inferência estatística, permitindo tirar conclusões sobre populações a partir de amostras.
+            </p>
+            <p>
+                    Os avanços computacionais do século XX transformaram profundamente a prática estatística, permitindo análises mais complexas e o processamento de volumes de dados antes impossíveis.
+            </p>`
+            ,
+            // Importância
+            `
+            <h1>Importância da Estatística</h1>
+            <p>
+                A estatística é fundamental para a sociedade moderna, funcionando como uma linguagem universal da ciência que permite quantificar a incerteza e tomar decisões informadas em ambientes complexos.
+            </p>
+            <div class="sobre-cards">
+                <div class="sobre-card">
+                    <i class="fa-solid fa-check-double"></i>
+                    <h4>Na Tomada de Decisões</h4>
+                    <p>Fornece métodos para analisar dados e extrair insights, reduzindo riscos em decisões importantes para governos, empresas e indivíduos.</p>
+                </div>
+                <div class="sobre-card">
+                    <i class="fa-solid fa-flask"></i>
+                    <h4>No Avanço Científico</h4>
+                    <p>Oferece ferramentas para testar hipóteses, validar teorias e quantificar a confiabilidade dos resultados científicos.</p>
+                </div>
+                <div class="sobre-card">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <h4>Na Saúde Pública</h4>
+                    <p>Essencial no desenvolvimento de medicamentos, compreensão de epidemias e elaboração de políticas de saúde pública eficazes.</p>
+                </div>
+                <div class="sobre-card">
+                    <i class="fa-solid fa-database"></i>
+                    <h4>Na Era da Informação</h4>
+                    <p>Base para a ciência de dados moderna, permitindo extrair valor do crescente volume de dados gerados em nossa sociedade digital.</p>
+                </div>
+            </div>
+            <p>
+                A literacia estatística - a capacidade de entender e interpretar dados - tornou-se uma habilidade essencial para cidadãos informados no século XXI, permitindo avaliar criticamente informações quantitativas em mídia, pesquisas e relatórios.
+            </p>`,
+            // Aplicações
+            `
+            <h1>Aplicações Práticas da Estatística</h1>
+            <p>
+                A estatística permeia praticamente todos os campos do conhecimento humano, oferecendo métodos para coleta, análise e interpretação de dados nos mais diversos contextos.
+            </p>
+            <div class="areas-list">
+                <div class="area">
+                    <h5>Ciência de Dados</h5>
+                    <ul>
+                        <li>Machine Learning e IA</li>
+                        <li>Big Data Analytics</li>
+                        <li>Mineração de dados</li>
+                        <li>Visualização de informações</li>
+                    </ul>
+                </div>
+                <div class="area">
+                    <h5>Medicina e Saúde</h5>
+                    <ul>
+                        <li>Ensaios clínicos</li>
+                        <li>Epidemiologia</li>
+                        <li>Genética médica</li>
+                        <li>Sistemas de saúde pública</li>
+                    </ul>
+                </div>
+                <div class="area">
+                    <h5>Negócios e Economia</h5>
+                    <ul>
+                        <li>Análise de mercado</li>
+                        <li>Controle de qualidade</li>
+                        <li>Previsão financeira</li>
+                        <li>Pesquisa operacional</li>
+                    </ul>
+                </div>
+                <div class="area">
+                    <h5>Ciências Sociais</h5>
+                    <ul>
+                        <li>Pesquisas de opinião</li>
+                        <li>Demografia</li>
+                        <li>Psicometria</li>
+                        <li>Análise de comportamento</li>
+                    </ul>
+                </div>
+                <div class="area">
+                    <h5>Engenharia</h5>
+                    <ul>
+                        <li>Controle de processos</li>
+                        <li>Análise de confiabilidade</li>
+                        <li>Desenho experimental</li>
+                        <li>Otimização de sistemas</li>
+                    </ul>
+                </div>
+                <div class="area">
+                    <h5>Ciências Naturais</h5>
+                    <ul>
+                        <li>Ecologia e meio ambiente</li>
+                        <li>Pesquisa agrícola</li>
+                        <li>Física experimental</li>
+                        <li>Geologia e meteorologia</li>
+                    </ul>
+                </div>
+            </div>
+            <p>
+                A crescente digitalização da sociedade ampliou exponencialmente o papel da estatística, transformando-a em uma das disciplinas mais relevantes e demandadas do século XXI, com aplicações emergentes em áreas como Internet das Coisas (IoT), cidades inteligentes, medicina personalizada e muito mais.
+            </p>`,
+            // Curiosidades
+            `
+            <h1>Curiosidades sobre Estatística</h1>
+            <div class="sobre-cards">
+                <div class="sobre-card">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <h4>A "Mentira" Estatística</h4>
+                    <p>A frase "Existem três tipos de mentiras: mentiras, mentiras terríveis e estatísticas" é frequentemente atribuída a Mark Twain, que por sua vez creditou o político britânico Benjamin Disraeli. Ironicamente, não há evidência estatística clara de que Disraeli tenha realmente dito isso!</p>
+                </div>
+                <div class="sobre-card">
+                    <i class="fa-solid fa-random"></i>
+                    <h4>Imperfeições Perfeitas</h4>
+                    <p>Nos anos 1970, o psicólogo Amos Tversky descobriu que as pessoas tendem a ver padrões em sequências aleatórias. Quando pedimos para alguém gerar uma sequência "aleatória" de cara ou coroa, elas raramente incluem três ou mais resultados iguais consecutivos. No entanto, em verdadeiras sequências aleatórias, isso acontece com frequência.</p>
+                </div>
+                <div class="sobre-card">
+                    <i class="fa-solid fa-code-branch"></i>
+                    <h4>O Paradoxo de Simpson</h4>
+                    <p>Este fascinante paradoxo mostra como tendências podem aparecer, desaparecer ou reverter quando grupos de dados são combinados. É possível que um tratamento médico pareça eficaz para homens e mulheres separadamente, mas ineficaz quando os dados são agregados!</p>
+                </div>
+                <div class="sobre-card">
+                    <i class="fa-solid fa-chart-area"></i>
+                    <h4>A Curva Normal</h4>
+                    <p>A distribuição normal (ou gaussiana) é tão importante que o matemático francês Henri Poincaré disse: "Todo mundo acredita nela: os matemáticos porque pensam que é um fato experimental, e os experimentalistas porque pensam que é um teorema matemático."</p>
+                </div>
+                <div class="sobre-card">
+                    <i class="fa-solid fa-chart-area"></i>
+                    <h4>Estatística Eleitoral</h4>
+                    <p>Nas eleições presidenciais dos EUA de 1936, a revista Literary Digest previu que Alf Landon derrotaria Franklin D. Roosevelt por uma margem significativa. Esta previsão estava completamente errada devido a um viés de amostragem: a pesquisa foi enviada principalmente para pessoas de classe alta que possuíam telefones e carros (na época, itens de luxo). Este é um dos primeiros e mais famosos exemplos de como uma amostragem inadequada pode levar a conclusões estatísticas completamente erradas."</p>
+                </div>
+            </div>`
+        ];
+
+        function ativarAba(idx) {
+            tabs.forEach((tab, i) => {
+                tab.classList.toggle('active', i === idx);
+                tab.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+            });
+            tabContent.innerHTML = conteudos[idx];
+        }
+
+        tabs.forEach((tab, idx) => {
+            tab.addEventListener('click', () => ativarAba(idx));
+            tab.addEventListener('keydown', (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    ativarAba(idx);
+                }
+            });
+        });
+
+        // Inicializa com a primeira aba ativa
+        ativarAba(0);
+    </script>
+</body>
+</html>
